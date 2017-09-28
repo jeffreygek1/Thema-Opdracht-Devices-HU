@@ -1,0 +1,44 @@
+--------------------------------------------------------------------
+							CHECKLIST
+--------------------------------------------------------------------
+(x)	- Done
+(~)	- Working on it
+(-)	- To Do
+--------------------------------------------------------------------
+							WEEK 1 & 2
+--------------------------------------------------------------------
+(x) Bestuderen slides week 1
+(x) Alle betrokken docenten toegang verlenen tot een 
+	GitHub-repository voor de themaopdracht
+(x)	Teamcontract opstellen en plaatsen in de GitHub-repository
+(x)	Bestuderen V2THDE-16 Cursusbeschrijving & Beoordelingsmodel.pdf
+(x)	Practicum PicoScope
+--------------------------------------------------------------------
+							WEEK 3 & 4
+--------------------------------------------------------------------
+(x)	Bestuderen slides week 3
+(x)	Bestuderen casus Lasertag
+(~)	Varianten voor Lasertag per e-mail voorleggen aan docenten
+(~)	Nul-versie maken voor zender en ontvanger van IR-signalen.
+--------------------------------------------------------------------
+							WEEK 5 & 6
+--------------------------------------------------------------------
+(-)	Bestuderen slides week 5
+(-)	Maken werkverdeling en planning
+(-)	14 okt: Inleveren planning
+--------------------------------------------------------------------
+						   PROJECTWEEK 1
+--------------------------------------------------------------------
+(-)	27 okt:	Inleveren eerste versie solution architecture en 
+			aangepaste planning
+--------------------------------------------------------------------
+						   PROJECTWEEK 2
+--------------------------------------------------------------------
+(-)	3 nov: 	Inleveren concept onderzoeksrapport
+--------------------------------------------------------------------
+						   PROJECTWEEK 3
+--------------------------------------------------------------------
+(-)	8 nov:	Inleveren alle eindproducten
+(-)	9 nov: 	Demo en eindgesprekken
+(-) 10 nov: Demo en eindgesprekken
+--------------------------------------------------------------------
