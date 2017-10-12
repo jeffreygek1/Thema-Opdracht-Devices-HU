@@ -1,4 +1,12 @@
 #include "hwlib.hpp"
+void ir_on_36khz(int time, auto ir){
+    ir.set(1);
+    hwlib::wait_us(time);
+} 
+void ir_off_36khz(int time, auto ir){
+    ir.set(0);
+    hwlib::wait_us(time);
+}
 
 int main( void ){	
     
@@ -10,35 +18,29 @@ int main( void ){
    
    // IR output LED
    auto ir = hwlib::target::d2_36kHz();
+   ir.set(0);
    
-   // red output LED
-   auto red = hwlib::target::pin_out( hwlib::target::pins::d3 );
    
     int reeks = 39321;
     bool out = 0;
     int teller, Times_Send;
-    for(Times_Send = 0; Times_Send < 2; Times_Send++){
-        for(teller = 0;teller<16;teller++){
-            out = (reeks >> teller) & 1;
-            if( out == 1){
-                ir.set( 1 );
-                red.set( 1 );
-                hwlib::wait_us(800);
-                ir.set( 0 );
-                red.set( 0 );
-                hwlib::wait_us(1600);
+        for(Times_Send = 0; Times_Send < 1 ;Times_Send++){
+            for(teller = 0;teller<16;teller++){
+                out = (reeks >> teller) & 1;
+                if( out == 0){
+                    //hwlib::cout << "0";
+                    ir_on_36khz(800, ir);
+                    ir_off_36khz(1600, ir);
+                }
+                else{
+                    //hwlib::cout << "1";
+                    ir_on_36khz(1600, ir);
+                    ir_off_36khz(800, ir);
+                }
             }
-            else{
-                ir.set( 1 );
-                red.set( 1 );
-                hwlib::wait_us(1600);
-                ir.set( 0 );
-                red.set( 0 );
-                hwlib::wait_us(800);
-            }
+            hwlib::wait_ms(1000);
         }
-        hwlib::wait_ms(3);
-    }
 }
+
 
 
