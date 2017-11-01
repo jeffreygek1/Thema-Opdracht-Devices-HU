@@ -29,7 +29,7 @@
 --------------------------------------------------------------------
 						   PROJECTWEEK 1
 --------------------------------------------------------------------
-(-)	27 okt:	Inleveren eerste versie solution architecture en 
+()	27 okt:	Inleveren eerste versie solution architecture en 
 			aangepaste planning
 --------------------------------------------------------------------
 						   PROJECTWEEK 2
