@@ -44,18 +44,18 @@ int main( void ){
       << "score: " << 42 << "\n"
       << "==============\n";     
       
-   auto t1 = hwlib::now_us(); 
-   oled.flush();
-   auto t2 = hwlib::now_us();
-   HWLIB_TRACE << "oled.fluhs() took " << t2 - t1 << " us";
-      
-   int n = 0;   
-   for(;;){
-      hwlib::wait_ms( 1000 );
-      d1 << "\f" << ++n;
-      d2 << "\t0502" << ": " << n + 42;
-      oled.flush();
-   }      
+//   auto t1 = hwlib::now_us(); 
+//   oled.flush();
+//   auto t2 = hwlib::now_us();
+//   HWLIB_TRACE << "oled.fluhs() took " << t2 - t1 << " us";
+//      
+//   int n = 0;   
+//   for(;;){
+//      hwlib::wait_ms( 1000 );
+//      d1 << "\f" << ++n;
+//      d2 << "\t0502" << ": " << n + 42;
+//      oled.flush();
+//   }      
       
 }
 

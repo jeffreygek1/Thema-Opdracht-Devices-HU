@@ -9,11 +9,13 @@ c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_f
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
                               hwlib.o (__aeabi_ldivmod)
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                              hwlib.o (__aeabi_uldivmod)
+                              RunGameTask.o (__aeabi_uldivmod)
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
                               c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
                               c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
+                              main.o (memcpy)
 
 Allocating common symbols
 Common symbol       size              file
@@ -104,6 +106,8 @@ Discarded input sections
                 0x00000000        0x4 RunGameTask.o
  .text._ZN5hwlib9uart_getcEv
                 0x00000000        0x4 RunGameTask.o
+ .text._ZN19Run_Game_Controller14setGameStartedEv
+                0x00000000        0x2 RunGameTask.o
  .bss._ZZN3due9now_ticksEvE4high
                 0x00000000        0x8 RunGameTask.o
  .bss._ZZN3due9now_ticksEvE8last_low
@@ -212,14 +216,72 @@ Discarded input sections
  .text          0x00000000        0x0 Register_entity.o
  .data          0x00000000        0x0 Register_entity.o
  .bss           0x00000000        0x0 Register_entity.o
- .text._ZN15Register_entity5getDUEv
-                0x00000000        0x4 Register_entity.o
  .text._ZN15Register_entity5setFPEi
                 0x00000000        0x4 Register_entity.o
  .text._ZN15Register_entity5setPNEi
                 0x00000000        0x4 Register_entity.o
  .text._ZN15Register_entity5setDUEi
                 0x00000000        0x4 Register_entity.o
+ .text          0x00000000        0x0 HP_entity.o
+ .data          0x00000000        0x0 HP_entity.o
+ .bss           0x00000000        0x0 HP_entity.o
+ .text._ZN9HP_entity5setHPEi
+                0x00000000        0x4 HP_entity.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .group         0x00000000        0x8 OLEDTask.o
+ .text          0x00000000        0x0 OLEDTask.o
+ .data          0x00000000        0x0 OLEDTask.o
+ .bss           0x00000000        0x0 OLEDTask.o
+ .text._ZN5hwlib7ostream6fillerEi
+                0x00000000       0x1a OLEDTask.o
+ .text._ZN5hwliblsERNS_7ostreamEPKc
+                0x00000000       0x54 OLEDTask.o
+ .text._ZN6sam3xa10SystemInitEv
+                0x00000000       0x80 OLEDTask.o
+ .text._ZN3due8pin_infoENS_4pinsE
+                0x00000000       0x20 OLEDTask.o
+ .text._ZN3due11ad_pin_infoENS_7ad_pinsE
+                0x00000000       0x1c OLEDTask.o
+ .text._ZN3due11ad_seq_infoEm
+                0x00000000       0x20 OLEDTask.o
+ .text._ZN3due14port_registersEm
+                0x00000000       0x48 OLEDTask.o
+ .text._ZN3due12ticks_per_usEv
+                0x00000000        0x6 OLEDTask.o
+ .text._ZN3due9now_ticksEv
+                0x00000000       0x70 OLEDTask.o
+ .text._ZN5hwlib9uart_putcEc
+                0x00000000        0x4 OLEDTask.o
+ .text._ZN5hwlib19uart_char_availableEv
+                0x00000000        0x4 OLEDTask.o
+ .text._ZN5hwlib9uart_getcEv
+                0x00000000        0x4 OLEDTask.o
+ .text._ZN15OLED_Controller5flushEv
+                0x00000000        0xc OLEDTask.o
+ .text._ZN15OLED_Controller13printGameOverEv
+                0x00000000       0x28 OLEDTask.o
+ .bss._ZZN3due9now_ticksEvE4high
+                0x00000000        0x8 OLEDTask.o
+ .bss._ZZN3due9now_ticksEvE8last_low
+                0x00000000        0x4 OLEDTask.o
+ .bss._ZZN3due9now_ticksEvE9init_done
+                0x00000000        0x1 OLEDTask.o
+ .data._ZN6sam3xa15SystemCoreClockE
+                0x00000000        0x4 OLEDTask.o
+ .rodata._ZN15OLED_Controller13printGameOverEv.str1.1
+                0x00000000       0x14 OLEDTask.o
+ .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
+                0x00000000       0x33 OLEDTask.o
+ .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
+                0x00000000        0xc OLEDTask.o
+ .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
+                0x00000000       0x70 OLEDTask.o
+ .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
+                0x00000000       0xa4 OLEDTask.o
  .group         0x00000000        0x8 hwlib.o
  .group         0x00000000        0x8 hwlib.o
  .group         0x00000000        0x8 hwlib.o
@@ -265,10 +327,6 @@ Discarded input sections
                 0x00000000        0x2 hwlib.o
  .text._ZN5hwlib6pin_in7refreshEv
                 0x00000000        0x2 hwlib.o
- .text._ZN5hwlib6pin_oc7refreshEv
-                0x00000000        0x2 hwlib.o
- .text._ZN5hwlib6pin_oc5flushEv
-                0x00000000        0x2 hwlib.o
  .text._ZN5hwlib23_pin_in_out_dummy_class3setEbNS_9bufferingE
                 0x00000000        0x2 hwlib.o
  .text._ZN5hwlib23_pin_in_out_dummy_class3getENS_9bufferingE
@@ -295,8 +353,6 @@ Discarded input sections
                 0x00000000       0x54 hwlib.o
  .text._ZN5hwliblsERNS_7ostreamENS_8locationE
                 0x00000000       0x3c hwlib.o
- .text._ZN5hwlib6window5writeENS_8locationENS_5colorENS_9bufferingE
-                0x00000000       0x38 hwlib.o
  .text._ZN5hwlib4line4drawERNS_6windowENS_9bufferingE
                 0x00000000       0xa8 hwlib.o
  .text._ZN5hwlib6circle4drawERNS_6windowENS_9bufferingE
@@ -393,8 +449,6 @@ Discarded input sections
                 0x00000000        0x4 hwlib.o
  .data._ZN5hwlib13pin_out_dummyE
                 0x00000000        0x4 hwlib.o
- .data._ZN5hwlib15font_16x16_dataE
-                0x00000000      0xbe4 hwlib.o
  .data._ZN5hwlib16pin_in_out_dummyE
                 0x00000000        0x4 hwlib.o
  .data._ZN5hwlib3cinE
@@ -476,8 +530,12 @@ Discarded input sections
  .text          0x00000000        0x0 rtos.o
  .data          0x00000000        0x0 rtos.o
  .bss           0x00000000        0x0 rtos.o
+ .text._ZN5hwlib7ostream7reverse10add_prefixERKS0_.part.1
+                0x00000000       0x4c rtos.o
  .text._ZN5hwliblsERNS_7ostreamEPKc
                 0x00000000       0x66 rtos.o
+ .text._ZN5hwliblsERNS_7ostreamEi
+                0x00000000       0x94 rtos.o
  .text._ZN5hwliblsERNS_7ostreamEx
                 0x00000000       0xc6 rtos.o
  .text._ZN6sam3xa10SystemInitEv
@@ -603,25 +661,69 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
  .text._ZN5hwlib7pin_out5flushEv
                 0x00000000        0x2 main.o
- .text._ZN4rtos8callback6cancelEv
-                0x00000000        0xa main.o
+ .text._ZN5hwlib6pin_oc7refreshEv
+                0x00000000        0x2 main.o
+ .text._ZN5hwlib6pin_oc5flushEv
+                0x00000000        0x2 main.o
+ .text._ZN5hwlib7ostream5flushEv
+                0x00000000        0x2 main.o
  .text._ZN4rtos8waitable5clearEv
                 0x00000000        0xa main.o
  .text._ZN4rtos7channelIiLi10EE5clearEv
                 0x00000000       0x10 main.o
  .text.startup._ZN17Beeper_Controller4mainEv
                 0x00000000       0x50 main.o
+ .text.startup._ZN15OLED_Controller4mainEv
+                0x00000000       0x30 main.o
  .text._ZN5hwlib7ostream6fillerEi
                 0x00000000       0x1a main.o
  .text._ZN5hwliblsERNS_7ostreamEPKc
                 0x00000000       0x54 main.o
  .text.startup._ZN18IR_Send_Controller4mainEv
                 0x00000000      0x11c main.o
+ .text._ZN5hwlib6window5writeENS_8locationENS_5colorENS_9bufferingE
+                0x00000000       0x38 main.o
  .text._ZN6sam3xa10SystemInitEv
                 0x00000000       0x80 main.o
  .text._ZN3due8pin_infoENS_4pinsE
@@ -643,13 +745,9 @@ Discarded input sections
  .text._ZN5hwlib9uart_getcEv
                 0x00000000        0x4 main.o
  .text.startup._ZN19Run_Game_Controller4mainEv
-                0x00000000       0x3c main.o
- .text._ZN18IR_Send_ControllerD2Ev
-                0x00000000       0x48 main.o
- .rodata._ZTVN4rtos8callbackE
-                0x00000000       0x10 main.o
- .rodata._ZTV18IR_Send_Controller
-                0x00000000       0x14 main.o
+                0x00000000       0x78 main.o
+ .text._ZN4rtos9pool_baseD2Ev
+                0x00000000       0x28 main.o
  .bss._ZZN3due9now_ticksEvE4high
                 0x00000000        0x8 main.o
  .bss._ZZN3due9now_ticksEvE8last_low
@@ -658,10 +756,10 @@ Discarded input sections
                 0x00000000        0x1 main.o
  .data._ZN6sam3xa15SystemCoreClockE
                 0x00000000        0x4 main.o
- .rodata._ZN18IR_Send_ControllerD2Ev.str1.1
-                0x00000000       0x21 main.o
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
                 0x00000000       0x33 main.o
+ .rodata._ZN4rtos9pool_baseD2Ev.str1.1
+                0x00000000       0x17 main.o
  .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
                 0x00000000        0xc main.o
  .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
@@ -696,6 +794,8 @@ Discarded input sections
  .ARM.extab     0x00000000        0x0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
  .data          0x00000000        0x0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
 Memory Configuration
 
@@ -714,6 +814,8 @@ LOAD RunGameTask.o
 LOAD IRSendTask.o
 LOAD IR_LED.o
 LOAD Register_entity.o
+LOAD HP_entity.o
+LOAD OLEDTask.o
 LOAD hwlib.o
 LOAD switch_to.o
 LOAD coroutine.o
@@ -738,7 +840,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000     0x2e4c
+.text           0x00000000     0x4398
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -809,465 +911,652 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .text._ZN17Beeper_Controller12setSoundFlagEv
                 0x000004f4        0xa BeeperTask.o
                 0x000004f4                _ZN17Beeper_Controller12setSoundFlagEv
+ *fill*         0x000004fe        0x2 
+ .text._ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_ControllerR15OLED_ControllerR15Register_entity
+                0x00000500       0x80 RunGameTask.o
+                0x00000500                _ZN19Run_Game_ControllerC1ER17Beeper_ControllerR18IR_Send_ControllerR15OLED_ControllerR15Register_entity
+                0x00000500                _ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_ControllerR15OLED_ControllerR15Register_entity
+ .text._ZN19Run_Game_Controller10timePassedEi
+                0x00000580       0x2c RunGameTask.o
+                0x00000580                _ZN19Run_Game_Controller10timePassedEi
  .text.startup._ZN19Run_Game_Controller4mainEv
-                0x000004fe       0x3c RunGameTask.o
-                0x000004fe                _ZN19Run_Game_Controller4mainEv
- *fill*         0x0000053a        0x2 
- .text._ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_Controller
-                0x0000053c       0x68 RunGameTask.o
-                0x0000053c                _ZN19Run_Game_ControllerC1ER17Beeper_ControllerR18IR_Send_Controller
-                0x0000053c                _ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_Controller
+                0x000005ac       0x78 RunGameTask.o
+                0x000005ac                _ZN19Run_Game_Controller4mainEv
  .text._ZN4rtos7channelIiLi10EE5clearEv
-                0x000005a4       0x12 IRSendTask.o
-                0x000005a4                _ZN4rtos7channelIiLi10EE5clearEv
+                0x00000624       0x12 IRSendTask.o
+                0x00000624                _ZN4rtos7channelIiLi10EE5clearEv
  .text._ZN5hwlib7ostream6fillerEi
-                0x000005b6       0x1a IRSendTask.o
-                0x000005b6                _ZN5hwlib7ostream6fillerEi
+                0x00000636       0x1a IRSendTask.o
+                0x00000636                _ZN5hwlib7ostream6fillerEi
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x000005d0       0x54 IRSendTask.o
-                0x000005d0                _ZN5hwliblsERNS_7ostreamEPKc
+                0x00000650       0x54 IRSendTask.o
+                0x00000650                _ZN5hwliblsERNS_7ostreamEPKc
  .text._ZN18IR_Send_ControllerC2ER6IR_LEDR15Register_entity
-                0x00000624       0xa0 IRSendTask.o
-                0x00000624                _ZN18IR_Send_ControllerC1ER6IR_LEDR15Register_entity
-                0x00000624                _ZN18IR_Send_ControllerC2ER6IR_LEDR15Register_entity
+                0x000006a4       0x90 IRSendTask.o
+                0x000006a4                _ZN18IR_Send_ControllerC1ER6IR_LEDR15Register_entity
+                0x000006a4                _ZN18IR_Send_ControllerC2ER6IR_LEDR15Register_entity
  .text._ZN18IR_Send_Controller11send_signalEi
-                0x000006c4       0x58 IRSendTask.o
-                0x000006c4                _ZN18IR_Send_Controller11send_signalEi
+                0x00000734       0x58 IRSendTask.o
+                0x00000734                _ZN18IR_Send_Controller11send_signalEi
  .text._ZN18IR_Send_Controller13encode_signalEi
-                0x0000071c       0x38 IRSendTask.o
-                0x0000071c                _ZN18IR_Send_Controller13encode_signalEi
+                0x0000078c       0x38 IRSendTask.o
+                0x0000078c                _ZN18IR_Send_Controller13encode_signalEi
  .text._ZN18IR_Send_Controller17setMessageChannelEi
-                0x00000754       0x40 IRSendTask.o
-                0x00000754                _ZN18IR_Send_Controller17setMessageChannelEi
+                0x000007c4       0x40 IRSendTask.o
+                0x000007c4                _ZN18IR_Send_Controller17setMessageChannelEi
  .text._ZN18IR_Send_Controller14setMessageFlagEv
-                0x00000794        0x8 IRSendTask.o
-                0x00000794                _ZN18IR_Send_Controller14setMessageFlagEv
+                0x00000804        0x8 IRSendTask.o
+                0x00000804                _ZN18IR_Send_Controller14setMessageFlagEv
  .text._ZN4rtos7channelIiLi10EE4readEv
-                0x0000079c       0x70 IRSendTask.o
-                0x0000079c                _ZN4rtos7channelIiLi10EE4readEv
+                0x0000080c       0x70 IRSendTask.o
+                0x0000080c                _ZN4rtos7channelIiLi10EE4readEv
  .text.startup._ZN18IR_Send_Controller4mainEv
-                0x0000080c      0x120 IRSendTask.o
-                0x0000080c                _ZN18IR_Send_Controller4mainEv
+                0x0000087c      0x120 IRSendTask.o
+                0x0000087c                _ZN18IR_Send_Controller4mainEv
  .text._ZN6IR_LEDC2ERN3due8d2_36kHzE
-                0x0000092c       0x12 IR_LED.o
-                0x0000092c                _ZN6IR_LEDC1ERN3due8d2_36kHzE
-                0x0000092c                _ZN6IR_LEDC2ERN3due8d2_36kHzE
+                0x0000099c       0x12 IR_LED.o
+                0x0000099c                _ZN6IR_LEDC1ERN3due8d2_36kHzE
+                0x0000099c                _ZN6IR_LEDC2ERN3due8d2_36kHzE
  .text._ZN6IR_LED3setEi
-                0x0000093e       0x10 IR_LED.o
-                0x0000093e                _ZN6IR_LED3setEi
+                0x000009ae       0x10 IR_LED.o
+                0x000009ae                _ZN6IR_LED3setEi
  .text._ZN15Register_entityC2Eiii
-                0x0000094e        0x8 Register_entity.o
-                0x0000094e                _ZN15Register_entityC2Eiii
-                0x0000094e                _ZN15Register_entityC1Eiii
+                0x000009be        0x8 Register_entity.o
+                0x000009be                _ZN15Register_entityC2Eiii
+                0x000009be                _ZN15Register_entityC1Eiii
  .text._ZN15Register_entity5getFPEv
-                0x00000956        0x4 Register_entity.o
-                0x00000956                _ZN15Register_entity5getFPEv
+                0x000009c6        0x4 Register_entity.o
+                0x000009c6                _ZN15Register_entity5getFPEv
  .text._ZN15Register_entity5getPNEv
-                0x0000095a        0x4 Register_entity.o
-                0x0000095a                _ZN15Register_entity5getPNEv
- .text._ZN5hwlib7pin_out5flushEv
-                0x0000095e        0x2 hwlib.o
-                0x0000095e                _ZN5hwlib7pin_out5flushEv
- .text._ZN5hwlib7ostream5flushEv
-                0x00000960        0x2 hwlib.o
-                0x00000960                _ZN5hwlib7ostream5flushEv
- .text._ZN5hwliblsERNS_7ostreamEx
-                0x00000962      0x10a hwlib.o
-                0x00000962                _ZN5hwliblsERNS_7ostreamEx
- .text._ZN5hwlib5panicEPKcj
-                0x00000a6c        0x2 hwlib.o
-                0x00000a6c                _ZN5hwlib5panicEPKcj
- *fill*         0x00000a6e        0x2 
- .text._ZN3due9uart_initEv
-                0x00000a70       0x60 hwlib.o
-                0x00000a70                _ZN3due9uart_initEv
- .text._ZN3due19uart_char_availableEv
-                0x00000ad0       0x18 hwlib.o
-                0x00000ad0                _ZN3due19uart_char_availableEv
- .text._ZN3due9uart_getcEv
-                0x00000ae8       0x18 hwlib.o
-                0x00000ae8                _ZN3due9uart_getcEv
- .text._ZN3due9uart_putcEc
-                0x00000b00       0x1c hwlib.o
-                0x00000b00                _ZN3due9uart_putcEc
- .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x00000b1c        0xa hwlib.o
-                0x00000b1c                _ZN5hwlib20cout_using_uart_putc4putcEc
- .text._ZN5hwlib6now_usEv
-                0x00000b26       0x1c hwlib.o
-                0x00000b26                _ZN5hwlib6now_usEv
- .text._ZN5hwlib12wait_us_busyEi
-                0x00000b42       0x1c hwlib.o
-                0x00000b42                _ZN5hwlib12wait_us_busyEi
- *fill*         0x00000b5e        0x2 
- .text          0x00000b60       0x24 switch_to.o
-                0x00000b60                switch_from_to
- .text._ZN4rtos8callback6cancelEv
-                0x00000b84        0xa rtos.o
-                0x00000b84                _ZN4rtos8callback6cancelEv
- .text._ZN5hwlib7ostream7reverse10add_prefixERKS0_.part.1
-                0x00000b8e       0x4c rtos.o
- .text._ZN5hwlib7ostreamlsEc
-                0x00000bda        0xe rtos.o
-                0x00000bda                _ZN5hwlib7ostreamlsEc
+                0x000009ca        0x4 Register_entity.o
+                0x000009ca                _ZN15Register_entity5getPNEv
+ .text._ZN15Register_entity5getDUEv
+                0x000009ce        0x4 Register_entity.o
+                0x000009ce                _ZN15Register_entity5getDUEv
+ .text._ZN9HP_entityC2Ei
+                0x000009d2        0x4 HP_entity.o
+                0x000009d2                _ZN9HP_entityC2Ei
+                0x000009d2                _ZN9HP_entityC1Ei
+ .text._ZN9HP_entity5getHPEv
+                0x000009d6        0x4 HP_entity.o
+                0x000009d6                _ZN9HP_entity5getHPEv
  .text._ZN5hwliblsERNS_7ostreamEi
-                0x00000be8       0x94 rtos.o
-                0x00000be8                _ZN5hwliblsERNS_7ostreamEi
+                0x000009da       0xd6 OLEDTask.o
+                0x000009da                _ZN5hwliblsERNS_7ostreamEi
+ .text._ZN15OLED_ControllerC2ERN5hwlib18glcd_oled_bufferedERNS0_14window_ostreamES4_S4_S4_R15Register_entityR9HP_entity
+                0x00000ab0       0xc0 OLEDTask.o
+                0x00000ab0                _ZN15OLED_ControllerC1ERN5hwlib18glcd_oled_bufferedERNS0_14window_ostreamES4_S4_S4_R15Register_entityR9HP_entity
+                0x00000ab0                _ZN15OLED_ControllerC2ERN5hwlib18glcd_oled_bufferedERNS0_14window_ostreamES4_S4_S4_R15Register_entityR9HP_entity
+ .text._ZN15OLED_Controller5clearEv
+                0x00000b70        0xc OLEDTask.o
+                0x00000b70                _ZN15OLED_Controller5clearEv
+ .text._ZN15OLED_Controller4drawERKN5hwlib8locationE
+                0x00000b7c       0x3e OLEDTask.o
+                0x00000b7c                _ZN15OLED_Controller4drawERKN5hwlib8locationE
+ .text.startup._ZN15OLED_Controller4mainEv
+                0x00000bba       0x30 OLEDTask.o
+                0x00000bba                _ZN15OLED_Controller4mainEv
+ *fill*         0x00000bea        0x2 
+ .text._ZN15OLED_Controller17printPlayerNumberEi
+                0x00000bec       0x30 OLEDTask.o
+                0x00000bec                _ZN15OLED_Controller17printPlayerNumberEi
+ .text._ZN15OLED_Controller7printHPEi
+                0x00000c1c       0x30 OLEDTask.o
+                0x00000c1c                _ZN15OLED_Controller7printHPEi
+ .text._ZN15OLED_Controller9printTimeEi
+                0x00000c4c       0x30 OLEDTask.o
+                0x00000c4c                _ZN15OLED_Controller9printTimeEi
+ .text._ZN15OLED_Controller11setTimePoolEi
+                0x00000c7c       0x28 OLEDTask.o
+                0x00000c7c                _ZN15OLED_Controller11setTimePoolEi
+ .text._ZN15OLED_Controller11getTimePoolEv
+                0x00000ca4       0x28 OLEDTask.o
+                0x00000ca4                _ZN15OLED_Controller11getTimePoolEv
+ .text._ZN15OLED_Controller13updateDisplayEv
+                0x00000ccc       0x3a OLEDTask.o
+                0x00000ccc                _ZN15OLED_Controller13updateDisplayEv
+ .text._ZN15OLED_Controller13setUpdateFlagEv
+                0x00000d06        0x8 OLEDTask.o
+                0x00000d06                _ZN15OLED_Controller13setUpdateFlagEv
+ .text._ZN5hwlib7pin_out5flushEv
+                0x00000d0e        0x2 hwlib.o
+                0x00000d0e                _ZN5hwlib7pin_out5flushEv
+ .text._ZN5hwlib6pin_oc7refreshEv
+                0x00000d10        0x2 hwlib.o
+                0x00000d10                _ZN5hwlib6pin_oc7refreshEv
+ .text._ZN5hwlib6pin_oc5flushEv
+                0x00000d12        0x2 hwlib.o
+                0x00000d12                _ZN5hwlib6pin_oc5flushEv
+ .text._ZN5hwlib7ostream5flushEv
+                0x00000d14        0x2 hwlib.o
+                0x00000d14                _ZN5hwlib7ostream5flushEv
+ .text._ZN5hwliblsERNS_7ostreamEx
+                0x00000d16      0x10a hwlib.o
+                0x00000d16                _ZN5hwliblsERNS_7ostreamEx
+ .text._ZN5hwlib5panicEPKcj
+                0x00000e20        0x2 hwlib.o
+                0x00000e20                _ZN5hwlib5panicEPKcj
+ .text._ZN5hwlib6window5writeENS_8locationENS_5colorENS_9bufferingE
+                0x00000e22       0x38 hwlib.o
+                0x00000e22                _ZN5hwlib6window5writeENS_8locationENS_5colorENS_9bufferingE
+ *fill*         0x00000e5a        0x2 
+ .text._ZN3due9uart_initEv
+                0x00000e5c       0x60 hwlib.o
+                0x00000e5c                _ZN3due9uart_initEv
+ .text._ZN3due19uart_char_availableEv
+                0x00000ebc       0x18 hwlib.o
+                0x00000ebc                _ZN3due19uart_char_availableEv
+ .text._ZN3due9uart_getcEv
+                0x00000ed4       0x18 hwlib.o
+                0x00000ed4                _ZN3due9uart_getcEv
+ .text._ZN3due9uart_putcEc
+                0x00000eec       0x1c hwlib.o
+                0x00000eec                _ZN3due9uart_putcEc
+ .text._ZN5hwlib20cout_using_uart_putc4putcEc
+                0x00000f08        0xa hwlib.o
+                0x00000f08                _ZN5hwlib20cout_using_uart_putc4putcEc
+ .text._ZN5hwlib6now_usEv
+                0x00000f12       0x1c hwlib.o
+                0x00000f12                _ZN5hwlib6now_usEv
+ .text._ZN5hwlib12wait_us_busyEi
+                0x00000f2e       0x1c hwlib.o
+                0x00000f2e                _ZN5hwlib12wait_us_busyEi
+ *fill*         0x00000f4a        0x2 
+ .text          0x00000f4c       0x24 switch_to.o
+                0x00000f4c                switch_from_to
+ .text._ZN4rtos8callback6cancelEv
+                0x00000f70        0xa rtos.o
+                0x00000f70                _ZN4rtos8callback6cancelEv
+ .text._ZN5hwlib7ostreamlsEc
+                0x00000f7a        0xe rtos.o
+                0x00000f7a                _ZN5hwlib7ostreamlsEc
  .text._ZN5hwliblsERNS_7ostreamEj
-                0x00000c7c        0xc rtos.o
-                0x00000c7c                _ZN5hwliblsERNS_7ostreamEj
+                0x00000f88        0xc rtos.o
+                0x00000f88                _ZN5hwliblsERNS_7ostreamEj
  .text._Z6strlenPKc
-                0x00000c88       0x10 rtos.o
-                0x00000c88                _Z6strlenPKc
+                0x00000f94       0x10 rtos.o
+                0x00000f94                _Z6strlenPKc
  .text._Z6strcpyPcPKc
-                0x00000c98       0x14 rtos.o
-                0x00000c98                _Z6strcpyPcPKc
+                0x00000fa4       0x14 rtos.o
+                0x00000fa4                _Z6strcpyPcPKc
  .text._Z15string_allocatePKc
-                0x00000cac       0x26 rtos.o
-                0x00000cac                _Z15string_allocatePKc
+                0x00000fb8       0x26 rtos.o
+                0x00000fb8                _Z15string_allocatePKc
  .text._Z12nr_from_maskj
-                0x00000cd2       0x1a rtos.o
-                0x00000cd2                _Z12nr_from_maskj
+                0x00000fde       0x1a rtos.o
+                0x00000fde                _Z12nr_from_maskj
  .text._Z15task_trampolinev
-                0x00000cec       0x34 rtos.o
-                0x00000cec                _Z15task_trampolinev
+                0x00000ff8       0x34 rtos.o
+                0x00000ff8                _Z15task_trampolinev
  .text._ZN4rtos9task_base7releaseEv
-                0x00000d20       0x24 rtos.o
-                0x00000d20                _ZN4rtos9task_base7releaseEv
+                0x0000102c       0x24 rtos.o
+                0x0000102c                _ZN4rtos9task_base7releaseEv
  .text._ZN4rtos9task_base7suspendEv
-                0x00000d44        0x8 rtos.o
-                0x00000d44                _ZN4rtos9task_base7suspendEv
+                0x00001050        0x8 rtos.o
+                0x00001050                _ZN4rtos9task_base7suspendEv
  .text._ZN4rtos9task_base6resumeEv
-                0x00000d4c        0x8 rtos.o
-                0x00000d4c                _ZN4rtos9task_base6resumeEv
+                0x00001058        0x8 rtos.o
+                0x00001058                _ZN4rtos9task_base6resumeEv
  .text._ZN4rtos9task_base7unblockEv
-                0x00000d54       0x14 rtos.o
-                0x00000d54                _ZN4rtos9task_base7unblockEv
+                0x00001060       0x14 rtos.o
+                0x00001060                _ZN4rtos9task_base7unblockEv
  .text._ZN4rtos9task_base5blockEv
-                0x00000d68       0x70 rtos.o
-                0x00000d68                _ZN4rtos9task_base5blockEv
+                0x00001074       0x70 rtos.o
+                0x00001074                _ZN4rtos9task_base5blockEv
  .text._ZNK4rtos9task_base5printERN5hwlib7ostreamEb
-                0x00000dd8      0x158 rtos.o
-                0x00000dd8                _ZNK4rtos9task_base5printERN5hwlib7ostreamEb
+                0x000010e4      0x158 rtos.o
+                0x000010e4                _ZNK4rtos9task_base5printERN5hwlib7ostreamEb
  .text._ZNK4rtos4flag5printERN5hwlib7ostreamEb
-                0x00000f30       0xcc rtos.o
-                0x00000f30                _ZNK4rtos4flag5printERN5hwlib7ostreamEb
+                0x0000123c       0xcc rtos.o
+                0x0000123c                _ZNK4rtos4flag5printERN5hwlib7ostreamEb
  .text._ZNK4rtos5timer5printERN5hwlib7ostreamEb
-                0x00000ffc       0xd0 rtos.o
-                0x00000ffc                _ZNK4rtos5timer5printERN5hwlib7ostreamEb
+                0x00001308       0xd0 rtos.o
+                0x00001308                _ZNK4rtos5timer5printERN5hwlib7ostreamEb
  .text._ZNK4rtos5clock5printERN5hwlib7ostreamEb
-                0x000010cc       0xd4 rtos.o
-                0x000010cc                _ZNK4rtos5clock5printERN5hwlib7ostreamEb
+                0x000013d8       0xd4 rtos.o
+                0x000013d8                _ZNK4rtos5clock5printERN5hwlib7ostreamEb
  .text._ZN4rtos12waitable_set17waitable_allocateEv
-                0x000011a0       0x38 rtos.o
-                0x000011a0                _ZN4rtos12waitable_set17waitable_allocateEv
+                0x000014ac       0x38 rtos.o
+                0x000014ac                _ZN4rtos12waitable_set17waitable_allocateEv
  .text._ZN4rtos8waitableC2EPNS_9task_baseEPKc
-                0x000011d8       0x2c rtos.o
-                0x000011d8                _ZN4rtos8waitableC1EPNS_9task_baseEPKc
-                0x000011d8                _ZN4rtos8waitableC2EPNS_9task_baseEPKc
+                0x000014e4       0x2c rtos.o
+                0x000014e4                _ZN4rtos8waitableC1EPNS_9task_baseEPKc
+                0x000014e4                _ZN4rtos8waitableC2EPNS_9task_baseEPKc
  .text._ZN4rtos12waitable_set3setERKNS_8waitableE
-                0x00001204       0x14 rtos.o
-                0x00001204                _ZN4rtos12waitable_set3setERKNS_8waitableE
+                0x00001510       0x14 rtos.o
+                0x00001510                _ZN4rtos12waitable_set3setERKNS_8waitableE
  .text._ZN4rtos5timer7time_upEv
-                0x00001218       0x10 rtos.o
-                0x00001218                _ZN4rtos5timer7time_upEv
-                0x00001222                _ZThn16_N4rtos5timer7time_upEv
+                0x00001524       0x10 rtos.o
+                0x00001524                _ZN4rtos5timer7time_upEv
+                0x0000152e                _ZThn16_N4rtos5timer7time_upEv
  .text._ZN4rtos4flag3setEv
-                0x00001228       0x10 rtos.o
-                0x00001228                _ZN4rtos4flag3setEv
+                0x00001534       0x10 rtos.o
+                0x00001534                _ZN4rtos4flag3setEv
  .text._ZN4rtos12waitable_set5clearERKNS_8waitableE
-                0x00001238        0xc rtos.o
-                0x00001238                _ZN4rtos12waitable_set5clearERKNS_8waitableE
+                0x00001544        0xc rtos.o
+                0x00001544                _ZN4rtos12waitable_set5clearERKNS_8waitableE
  .text._ZN4rtos8waitable5clearEv
-                0x00001244        0xa rtos.o
-                0x00001244                _ZN4rtos8waitable5clearEv
+                0x00001550        0xa rtos.o
+                0x00001550                _ZN4rtos8waitable5clearEv
  .text._ZN4rtos5timer6cancelEv
-                0x0000124e       0x16 rtos.o
-                0x0000124e                _ZN4rtos5timer6cancelEv
+                0x0000155a       0x16 rtos.o
+                0x0000155a                _ZN4rtos5timer6cancelEv
  .text._ZThn16_N4rtos5timer6cancelEv
-                0x00001264        0x8 rtos.o
-                0x00001264                _ZThn16_N4rtos5timer6cancelEv
+                0x00001570        0x8 rtos.o
+                0x00001570                _ZThn16_N4rtos5timer6cancelEv
  .text._ZN4rtos12waitable_set4waitEj
-                0x0000126c       0x64 rtos.o
-                0x0000126c                _ZN4rtos12waitable_set4waitEj
+                0x00001578       0x64 rtos.o
+                0x00001578                _ZN4rtos12waitable_set4waitEj
  .text._ZN4rtos5mutex4waitEv
-                0x000012d0       0x30 rtos.o
-                0x000012d0                _ZN4rtos5mutex4waitEv
+                0x000015dc       0x30 rtos.o
+                0x000015dc                _ZN4rtos5mutex4waitEv
  .text._ZN4rtos5mutex6signalEv
-                0x00001300       0x50 rtos.o
-                0x00001300                _ZN4rtos5mutex6signalEv
+                0x0000160c       0x50 rtos.o
+                0x0000160c                _ZN4rtos5mutex6signalEv
  .text._ZNK4rtos5mutex5printERN5hwlib7ostreamEb
-                0x00001350       0xec rtos.o
-                0x00001350                _ZNK4rtos5mutex5printERN5hwlib7ostreamEb
+                0x0000165c       0xec rtos.o
+                0x0000165c                _ZNK4rtos5mutex5printERN5hwlib7ostreamEb
  .text._ZNK4rtos12channel_base5printERN5hwlib7ostreamEb
-                0x0000143c       0xe0 rtos.o
-                0x0000143c                _ZNK4rtos12channel_base5printERN5hwlib7ostreamEb
+                0x00001748       0xe0 rtos.o
+                0x00001748                _ZNK4rtos12channel_base5printERN5hwlib7ostreamEb
  .text._ZNK4rtos9pool_base5printERN5hwlib7ostreamEb
-                0x0000151c       0x78 rtos.o
-                0x0000151c                _ZNK4rtos9pool_base5printERN5hwlib7ostreamEb
+                0x00001828       0x78 rtos.o
+                0x00001828                _ZNK4rtos9pool_base5printERN5hwlib7ostreamEb
  .text._ZNK4rtos12mailbox_base5printERN5hwlib7ostreamEb
-                0x00001594       0xc4 rtos.o
-                0x00001594                _ZNK4rtos12mailbox_base5printERN5hwlib7ostreamEb
+                0x000018a0       0xc4 rtos.o
+                0x000018a0                _ZNK4rtos12mailbox_base5printERN5hwlib7ostreamEb
  .text._ZN4rtos3addEPNS_4flagE
-                0x00001658       0x10 rtos.o
-                0x00001658                _ZN4rtos3addEPNS_4flagE
+                0x00001964       0x10 rtos.o
+                0x00001964                _ZN4rtos3addEPNS_4flagE
  .text._ZN4rtos4flagC2EPNS_9task_baseEPKc
-                0x00001668       0x20 rtos.o
-                0x00001668                _ZN4rtos4flagC2EPNS_9task_baseEPKc
-                0x00001668                _ZN4rtos4flagC1EPNS_9task_baseEPKc
+                0x00001974       0x20 rtos.o
+                0x00001974                _ZN4rtos4flagC2EPNS_9task_baseEPKc
+                0x00001974                _ZN4rtos4flagC1EPNS_9task_baseEPKc
  .text._ZN4rtos3addEPNS_5timerE
-                0x00001688       0x10 rtos.o
-                0x00001688                _ZN4rtos3addEPNS_5timerE
+                0x00001994       0x10 rtos.o
+                0x00001994                _ZN4rtos3addEPNS_5timerE
  .text._ZN4rtos3addEPNS_5mutexE
-                0x00001698       0x10 rtos.o
-                0x00001698                _ZN4rtos3addEPNS_5mutexE
+                0x000019a4       0x10 rtos.o
+                0x000019a4                _ZN4rtos3addEPNS_5mutexE
  .text._ZN4rtos5mutexC2EPKc
-                0x000016a8       0x1e rtos.o
-                0x000016a8                _ZN4rtos5mutexC2EPKc
-                0x000016a8                _ZN4rtos5mutexC1EPKc
- *fill*         0x000016c6        0x2 
+                0x000019b4       0x1e rtos.o
+                0x000019b4                _ZN4rtos5mutexC2EPKc
+                0x000019b4                _ZN4rtos5mutexC1EPKc
+ *fill*         0x000019d2        0x2 
  .text._ZN4rtos3addEPNS_12channel_baseE
-                0x000016c8       0x10 rtos.o
-                0x000016c8                _ZN4rtos3addEPNS_12channel_baseE
+                0x000019d4       0x10 rtos.o
+                0x000019d4                _ZN4rtos3addEPNS_12channel_baseE
  .text._ZN4rtos12channel_baseC2EPNS_9task_baseEPKc
-                0x000016d8       0x30 rtos.o
-                0x000016d8                _ZN4rtos12channel_baseC2EPNS_9task_baseEPKc
-                0x000016d8                _ZN4rtos12channel_baseC1EPNS_9task_baseEPKc
+                0x000019e4       0x30 rtos.o
+                0x000019e4                _ZN4rtos12channel_baseC2EPNS_9task_baseEPKc
+                0x000019e4                _ZN4rtos12channel_baseC1EPNS_9task_baseEPKc
  .text._ZN4rtos3addEPNS_9pool_baseE
-                0x00001708       0x10 rtos.o
-                0x00001708                _ZN4rtos3addEPNS_9pool_baseE
+                0x00001a14       0x10 rtos.o
+                0x00001a14                _ZN4rtos3addEPNS_9pool_baseE
  .text._ZN4rtos9pool_baseC2EPKc
-                0x00001718       0x1c rtos.o
-                0x00001718                _ZN4rtos9pool_baseC1EPKc
-                0x00001718                _ZN4rtos9pool_baseC2EPKc
+                0x00001a24       0x1c rtos.o
+                0x00001a24                _ZN4rtos9pool_baseC1EPKc
+                0x00001a24                _ZN4rtos9pool_baseC2EPKc
  .text._ZN4rtos5printERN5hwlib7ostreamE
-                0x00001734      0x1b4 rtos.o
-                0x00001734                _ZN4rtos5printERN5hwlib7ostreamE
+                0x00001a40      0x1b4 rtos.o
+                0x00001a40                _ZN4rtos5printERN5hwlib7ostreamE
  .text._ZN4rtos4beatEv
-                0x000018e8      0x14c rtos.o
-                0x000018e8                _ZN4rtos4beatEv
+                0x00001bf4      0x14c rtos.o
+                0x00001bf4                _ZN4rtos4beatEv
  .text._ZN4rtos3runEv
-                0x00001a34       0x20 rtos.o
-                0x00001a34                _ZN4rtos3runEv
+                0x00001d40       0x20 rtos.o
+                0x00001d40                _ZN4rtos3runEv
  .text._ZN4rtos3addEPNS_8callbackE
-                0x00001a54       0x10 rtos.o
-                0x00001a54                _ZN4rtos3addEPNS_8callbackE
+                0x00001d60       0x10 rtos.o
+                0x00001d60                _ZN4rtos3addEPNS_8callbackE
  .text._ZN4rtos8callbackC2EPKc
-                0x00001a64       0x2c rtos.o
-                0x00001a64                _ZN4rtos8callbackC1EPKc
-                0x00001a64                _ZN4rtos8callbackC2EPKc
+                0x00001d70       0x2c rtos.o
+                0x00001d70                _ZN4rtos8callbackC1EPKc
+                0x00001d70                _ZN4rtos8callbackC2EPKc
  .text._ZN4rtos5timerC2EPNS_9task_baseEPKc
-                0x00001a90       0x34 rtos.o
-                0x00001a90                _ZN4rtos5timerC1EPNS_9task_baseEPKc
-                0x00001a90                _ZN4rtos5timerC2EPNS_9task_baseEPKc
+                0x00001d9c       0x34 rtos.o
+                0x00001d9c                _ZN4rtos5timerC1EPNS_9task_baseEPKc
+                0x00001d9c                _ZN4rtos5timerC2EPNS_9task_baseEPKc
  .text._ZN4rtos3addEPNS_9task_baseE
-                0x00001ac4       0x74 rtos.o
-                0x00001ac4                _ZN4rtos3addEPNS_9task_baseE
+                0x00001dd0       0x74 rtos.o
+                0x00001dd0                _ZN4rtos3addEPNS_9task_baseE
  .text._ZN4rtos9task_baseC2ER9coroutineILl0EEjPKc
-                0x00001b38       0x4c rtos.o
-                0x00001b38                _ZN4rtos9task_baseC1ER9coroutineILl0EEjPKc
-                0x00001b38                _ZN4rtos9task_baseC2ER9coroutineILl0EEjPKc
+                0x00001e44       0x4c rtos.o
+                0x00001e44                _ZN4rtos9task_baseC1ER9coroutineILl0EEjPKc
+                0x00001e44                _ZN4rtos9task_baseC2ER9coroutineILl0EEjPKc
  .text._ZN5hwlib7wait_usEi
-                0x00001b84       0x3c rtos.o
-                0x00001b84                _ZN5hwlib7wait_usEi
+                0x00001e90       0x3c rtos.o
+                0x00001e90                _ZN5hwlib7wait_usEi
  .text._ZN5hwlib7wait_msEi
-                0x00001bc0       0x16 rtos.o
-                0x00001bc0                _ZN5hwlib7wait_msEi
+                0x00001ecc       0x16 rtos.o
+                0x00001ecc                _ZN5hwlib7wait_msEi
+ .text._ZN5hwlib7console7goto_xyEjj
+                0x00001ee2        0xa main.o
+                0x00001ee2                _ZN5hwlib7console7goto_xyEjj
+ .text._ZN5hwlib14window_ostream22goto_xy_implementationEjj
+                0x00001eec       0x20 main.o
+                0x00001eec                _ZN5hwlib14window_ostream22goto_xy_implementationEjj
+ .text._ZN5hwlib14window_ostream5clearEv
+                0x00001f0c       0x1e main.o
+                0x00001f0c                _ZN5hwlib14window_ostream5clearEv
+ .text._ZN5hwlib14window_ostream5flushEv
+                0x00001f2a        0x8 main.o
+                0x00001f2a                _ZN5hwlib14window_ostream5flushEv
+ .text._ZN5hwlib11window_part5flushEv
+                0x00001f32        0x8 main.o
+                0x00001f32                _ZN5hwlib11window_part5flushEv
+ *fill*         0x00001f3a        0x2 
+ .text._ZNK5hwlib11image_16x1618get_implementationENS_8locationE
+                0x00001f3c       0x58 main.o
+                0x00001f3c                _ZNK5hwlib11image_16x1618get_implementationENS_8locationE
+ .text._ZNK5hwlib18font_default_16x16ixEc
+                0x00001f94        0xc main.o
+                0x00001f94                _ZNK5hwlib18font_default_16x16ixEc
+ .text._ZN5hwlib18glcd_oled_buffered5clearEv
+                0x00001fa0       0x1c main.o
+                0x00001fa0                _ZN5hwlib18glcd_oled_buffered5clearEv
  .text._ZN3due7pin_out3setEbN5hwlib9bufferingE
-                0x00001bd6        0xe main.o
-                0x00001bd6                _ZN3due7pin_out3setEbN5hwlib9bufferingE
+                0x00001fbc        0xe main.o
+                0x00001fbc                _ZN3due7pin_out3setEbN5hwlib9bufferingE
+ .text._ZN3due6pin_oc3getEN5hwlib9bufferingE
+                0x00001fca       0x10 main.o
+                0x00001fca                _ZN3due6pin_oc3getEN5hwlib9bufferingE
+ .text._ZN3due6pin_oc3setEbN5hwlib9bufferingE
+                0x00001fda       0x10 main.o
+                0x00001fda                _ZN3due6pin_oc3setEbN5hwlib9bufferingE
+ *fill*         0x00001fea        0x2 
  .text._ZN3due8d2_36kHz3setEbN5hwlib9bufferingE
-                0x00001be4       0x18 main.o
-                0x00001be4                _ZN3due8d2_36kHz3setEbN5hwlib9bufferingE
+                0x00001fec       0x18 main.o
+                0x00001fec                _ZN3due8d2_36kHz3setEbN5hwlib9bufferingE
+ .text._ZN5hwlib7console4putcEc
+                0x00002004       0xb0 main.o
+                0x00002004                _ZN5hwlib7console4putcEc
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda16wait_half_periodEv.isra.9
+                0x000020b4        0x6 main.o
+ .text._ZN5hwlib6window5clearENS_9bufferingE
+                0x000020ba       0x56 main.o
+                0x000020ba                _ZN5hwlib6window5clearENS_9bufferingE
+ .text._ZN5hwlib11window_part20write_implementationENS_8locationENS_5colorENS_9bufferingE
+                0x00002110       0x32 main.o
+                0x00002110                _ZN5hwlib11window_part20write_implementationENS_8locationENS_5colorENS_9bufferingE
+ .text._ZN5hwlib14window_ostream19putc_implementationEc
+                0x00002142       0x88 main.o
+                0x00002142                _ZN5hwlib14window_ostream19putc_implementationEc
+ *fill*         0x000021ca        0x2 
+ .text._ZN5hwlib14window_ostreamC2ERNS_6windowERKNS_4fontE
+                0x000021cc       0x60 main.o
+                0x000021cc                _ZN5hwlib14window_ostreamC1ERNS_6windowERKNS_4fontE
+                0x000021cc                _ZN5hwlib14window_ostreamC2ERNS_6windowERKNS_4fontE
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda9write_bitEb
+                0x0000222c       0x36 main.o
+                0x0000222c                _ZN5hwlib26i2c_bus_bit_banged_scl_sda9write_bitEb
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda8read_bitEv
+                0x00002262       0x44 main.o
+                0x00002262                _ZN5hwlib26i2c_bus_bit_banged_scl_sda8read_bitEv
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda11write_startEv
+                0x000022a6       0x28 main.o
+                0x000022a6                _ZN5hwlib26i2c_bus_bit_banged_scl_sda11write_startEv
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_stopEv
+                0x000022ce       0x48 main.o
+                0x000022ce                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_stopEv
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_byteEj
+                0x00002316       0x1c main.o
+                0x00002316                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_byteEj
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda5writeEjPKhj
+                0x00002332       0x3a main.o
+                0x00002332                _ZN5hwlib26i2c_bus_bit_banged_scl_sda5writeEjPKhj
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda4readEjPhj
+                0x0000236c       0x60 main.o
+                0x0000236c                _ZN5hwlib26i2c_bus_bit_banged_scl_sda4readEjPhj
+ .text._ZN5hwlib18glcd_oled_buffered7commandEhhh
+                0x000023cc       0x30 main.o
+                0x000023cc                _ZN5hwlib18glcd_oled_buffered7commandEhhh
+ .text._ZN5hwlib18glcd_oled_buffered5flushEv
+                0x000023fc       0x5c main.o
+                0x000023fc                _ZN5hwlib18glcd_oled_buffered5flushEv
+ .text._ZN5hwlib18glcd_oled_buffered20write_implementationENS_8locationENS_5colorENS_9bufferingE
+                0x00002458       0xba main.o
+                0x00002458                _ZN5hwlib18glcd_oled_buffered20write_implementationENS_8locationENS_5colorENS_9bufferingE
+ *fill*         0x00002512        0x2 
+ .text._ZN3due6pin_ocC2ENS_4pinsE
+                0x00002514       0x34 main.o
+                0x00002514                _ZN3due6pin_ocC2ENS_4pinsE
+                0x00002514                _ZN3due6pin_ocC1ENS_4pinsE
  .text._ZN4rtos9task_baseD2Ev
-                0x00001bfc       0x30 main.o
-                0x00001bfc                _ZN4rtos9task_baseD2Ev
-                0x00001bfc                _ZN4rtos9task_baseD1Ev
+                0x00002548       0x30 main.o
+                0x00002548                _ZN4rtos9task_baseD2Ev
+                0x00002548                _ZN4rtos9task_baseD1Ev
  .text.startup.main
-                0x00001c2c      0x108 main.o
-                0x00001c2c                main
+                0x00002578      0x31c main.o
+                0x00002578                main
  .text.__startup
-                0x00001d34       0x48 bmptk_cortex.o
-                0x00001d34                __startup
+                0x00002894       0x48 bmptk_cortex.o
+                0x00002894                __startup
  .text.__cxa_pure_virtual
-                0x00001d7c        0x2 bmptk_cortex.o
-                0x00001d7c                __cxa_pure_virtual
- *fill*         0x00001d7e        0x2 
- .text.malloc   0x00001d80       0x24 bmptk_heap_bmptk.o
-                0x00001d80                malloc
- .text          0x00001da4      0x370 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
-                0x00001da4                __aeabi_drsub
-                0x00001dac                __aeabi_dsub
-                0x00001dac                __subdf3
-                0x00001db0                __aeabi_dadd
-                0x00001db0                __adddf3
-                0x00002028                __floatunsidf
-                0x00002028                __aeabi_ui2d
-                0x00002048                __floatsidf
-                0x00002048                __aeabi_i2d
-                0x0000206c                __aeabi_f2d
-                0x0000206c                __extendsfdf2
-                0x000020a8                __floatundidf
-                0x000020a8                __aeabi_ul2d
-                0x000020b8                __floatdidf
-                0x000020b8                __aeabi_l2d
- .text          0x00002114      0x424 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
-                0x00002114                __aeabi_dmul
-                0x00002114                __muldf3
-                0x00002368                __divdf3
-                0x00002368                __aeabi_ddiv
- .text          0x00002538       0x50 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_fixdfsi.o)
-                0x00002538                __aeabi_d2iz
-                0x00002538                __fixdfsi
- .text          0x00002588       0xa0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
-                0x00002588                __aeabi_ldivmod
- .text          0x00002628       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                0x00002628                __aeabi_uldivmod
- .text          0x00002658      0x2dc c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
-                0x00002658                __udivmoddi4
- .text          0x00002934        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
-                0x00002934                __aeabi_ldiv0
-                0x00002938                . = ALIGN (0x4)
+                0x000028dc        0x2 bmptk_cortex.o
+                0x000028dc                __cxa_pure_virtual
+ *fill*         0x000028de        0x2 
+ .text.malloc   0x000028e0       0x24 bmptk_heap_bmptk.o
+                0x000028e0                malloc
+ .text          0x00002904      0x370 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
+                0x00002904                __aeabi_drsub
+                0x0000290c                __aeabi_dsub
+                0x0000290c                __subdf3
+                0x00002910                __aeabi_dadd
+                0x00002910                __adddf3
+                0x00002b88                __floatunsidf
+                0x00002b88                __aeabi_ui2d
+                0x00002ba8                __floatsidf
+                0x00002ba8                __aeabi_i2d
+                0x00002bcc                __aeabi_f2d
+                0x00002bcc                __extendsfdf2
+                0x00002c08                __floatundidf
+                0x00002c08                __aeabi_ul2d
+                0x00002c18                __floatdidf
+                0x00002c18                __aeabi_l2d
+ .text          0x00002c74      0x424 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
+                0x00002c74                __aeabi_dmul
+                0x00002c74                __muldf3
+                0x00002ec8                __divdf3
+                0x00002ec8                __aeabi_ddiv
+ .text          0x00003098       0x50 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_fixdfsi.o)
+                0x00003098                __aeabi_d2iz
+                0x00003098                __fixdfsi
+ .text          0x000030e8       0xa0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
+                0x000030e8                __aeabi_ldivmod
+ .text          0x00003188       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x00003188                __aeabi_uldivmod
+ .text          0x000031b8      0x2dc c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x000031b8                __udivmoddi4
+ .text          0x00003494        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x00003494                __aeabi_ldiv0
+ .text          0x00003498       0xec c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
+                0x00003498                memcpy
+                0x00003584                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00002938        0x0 linker stubs
- .glue_7t       0x00002938        0x0 linker stubs
-                0x00002938                . = ALIGN (0x4)
+ .glue_7        0x00003584        0x0 linker stubs
+ .glue_7t       0x00003584        0x0 linker stubs
+                0x00003584                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x00002938       0x33 Beeper.o
+                0x00003584       0x33 Beeper.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000296b       0xa4 Beeper.o
- *fill*         0x00002a0f        0x1 
+                0x000035b7       0xa4 Beeper.o
+ *fill*         0x0000365b        0x1 
  .rodata._ZTV17Beeper_Controller
-                0x00002a10       0x14 BeeperTask.o
-                0x00002a10                _ZTV17Beeper_Controller
+                0x0000365c       0x14 BeeperTask.o
+                0x0000365c                _ZTV17Beeper_Controller
  .rodata._ZN17Beeper_ControllerC2ER6Beeper.str1.1
-                0x00002a24       0x31 BeeperTask.o
- *fill*         0x00002a55        0x3 
+                0x00003670       0x31 BeeperTask.o
+ *fill*         0x000036a1        0x3 
  .rodata._ZTV19Run_Game_Controller
-                0x00002a58       0x14 RunGameTask.o
-                0x00002a58                _ZTV19Run_Game_Controller
- .rodata._ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_Controller.str1.1
-                0x00002a6c        0xc RunGameTask.o
+                0x000036a4       0x14 RunGameTask.o
+                0x000036a4                _ZTV19Run_Game_Controller
+ .rodata._ZN19Run_Game_ControllerC2ER17Beeper_ControllerR18IR_Send_ControllerR15OLED_ControllerR15Register_entity.str1.1
+                0x000036b8        0xc RunGameTask.o
  .rodata._ZTVN4rtos7channelIiLi10EEE
-                0x00002a78        0xc IRSendTask.o
-                0x00002a78                _ZTVN4rtos7channelIiLi10EEE
+                0x000036c4        0xc IRSendTask.o
+                0x000036c4                _ZTVN4rtos7channelIiLi10EEE
  .rodata._ZTV18IR_Send_Controller
-                0x00002a84       0x14 IRSendTask.o
-                0x00002a84                _ZTV18IR_Send_Controller
+                0x000036d0       0x14 IRSendTask.o
+                0x000036d0                _ZTV18IR_Send_Controller
  .rodata._ZN18IR_Send_ControllerC2ER6IR_LEDR15Register_entity.str1.1
-                0x00002a98       0x22 IRSendTask.o
+                0x000036e4       0x1a IRSendTask.o
  .rodata._ZN4rtos7channelIiLi10EE4readEv.str1.1
-                0x00002aba       0x32 IRSendTask.o
+                0x000036fe       0x32 IRSendTask.o
                                  0x34 (size before relaxing)
+ .rodata._ZTV15OLED_Controller
+                0x00003730       0x14 OLEDTask.o
+                0x00003730                _ZTV15OLED_Controller
+ .rodata._ZN15OLED_Controller17printPlayerNumberEi.str1.1
+                0x00003744        0x7 OLEDTask.o
+                                  0x9 (size before relaxing)
+ .rodata._ZN15OLED_Controller7printHPEi.str1.1
+                0x0000374b        0x5 OLEDTask.o
+ .rodata._ZN15OLED_Controller9printTimeEi.str1.1
+                0x00003750        0x5 OLEDTask.o
+                                  0x2 (size before relaxing)
+ .rodata._ZN15OLED_ControllerC2ERN5hwlib18glcd_oled_bufferedERNS0_14window_ostreamES4_S4_S4_R15Register_entityR9HP_entity.str1.1
+                0x00003750       0x27 OLEDTask.o
+ *fill*         0x00003777        0x1 
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00002aec       0x10 hwlib.o
-                0x00002aec                _ZTVN5hwlib20cout_using_uart_putcE
+                0x00003778       0x10 hwlib.o
+                0x00003778                _ZTVN5hwlib20cout_using_uart_putcE
  .rodata._ZTVN4rtos8waitableE
-                0x00002afc        0xc rtos.o
-                0x00002afc                _ZTVN4rtos8waitableE
+                0x00003788        0xc rtos.o
+                0x00003788                _ZTVN4rtos8waitableE
  .rodata._ZTVN4rtos4flagE
-                0x00002b08        0xc rtos.o
-                0x00002b08                _ZTVN4rtos4flagE
+                0x00003794        0xc rtos.o
+                0x00003794                _ZTVN4rtos4flagE
  .rodata._ZTVN4rtos8callbackE
-                0x00002b14       0x10 rtos.o
-                0x00002b14                _ZTVN4rtos8callbackE
+                0x000037a0       0x10 rtos.o
+                0x000037a0                _ZTVN4rtos8callbackE
  .rodata._ZTVN4rtos12channel_baseE
-                0x00002b24        0xc rtos.o
-                0x00002b24                _ZTVN4rtos12channel_baseE
+                0x000037b0        0xc rtos.o
+                0x000037b0                _ZTVN4rtos12channel_baseE
  .rodata._Z15task_trampolinev.str1.1
-                0x00002b30       0x2e rtos.o
+                0x000037bc       0x2e rtos.o
  .rodata._ZN4rtos12waitable_set17waitable_allocateEv.str1.1
-                0x00002b5e       0x1b rtos.o
+                0x000037ea       0x1b rtos.o
  .rodata._ZN4rtos3addEPNS_9task_baseE.str1.1
-                0x00002b79       0x2e rtos.o
+                0x00003805       0x2e rtos.o
  .rodata._ZN4rtos4beatEv.str1.1
-                0x00002ba7       0x3e rtos.o
+                0x00003833       0x3e rtos.o
  .rodata._ZN4rtos5mutex6signalEv.str1.1
-                0x00002be5       0x21 rtos.o
+                0x00003871       0x21 rtos.o
  .rodata._ZN4rtos5printERN5hwlib7ostreamE.str1.1
-                0x00002c06       0x83 rtos.o
+                0x00003892       0x83 rtos.o
  .rodata._ZN4rtos9task_base5blockEv.str1.1
-                0x00002c89       0x37 rtos.o
+                0x00003915       0x37 rtos.o
                                  0x4b (size before relaxing)
  .rodata._ZN4rtos9task_baseC2ER9coroutineILl0EEjPKc.str1.1
-                0x00002cc0        0x8 rtos.o
+                0x0000394c        0x8 rtos.o
  .rodata._ZNK4rtos12channel_base5printERN5hwlib7ostreamEb.str1.1
-                0x00002cc8       0x23 rtos.o
+                0x00003954       0x23 rtos.o
  .rodata._ZNK4rtos12mailbox_base5printERN5hwlib7ostreamEb.str1.1
-                0x00002ceb       0x1b rtos.o
+                0x00003977       0x1b rtos.o
  .rodata._ZNK4rtos4flag5printERN5hwlib7ostreamEb.str1.1
-                0x00002d06       0x1e rtos.o
+                0x00003992       0x1e rtos.o
  .rodata._ZNK4rtos5clock5printERN5hwlib7ostreamEb.str1.1
-                0x00002d24       0x1d rtos.o
+                0x000039b0       0x1d rtos.o
  .rodata._ZNK4rtos5mutex5printERN5hwlib7ostreamEb.str1.1
-                0x00002d41       0x29 rtos.o
+                0x000039cd       0x29 rtos.o
  .rodata._ZNK4rtos5timer5printERN5hwlib7ostreamEb.str1.1
-                0x00002d6a       0x13 rtos.o
+                0x000039f6       0x13 rtos.o
  .rodata._ZNK4rtos9pool_base5printERN5hwlib7ostreamEb.str1.1
-                0x00002d7d       0x10 rtos.o
+                0x00003a09       0x10 rtos.o
  .rodata._ZNK4rtos9task_base5printERN5hwlib7ostreamEb.str1.1
-                0x00002d8d       0x39 rtos.o
- *fill*         0x00002dc6        0x2 
+                0x00003a19       0x39 rtos.o
+ *fill*         0x00003a52        0x2 
  .rodata._ZTVN4rtos5timerE
-                0x00002dc8       0x24 rtos.o
-                0x00002dc8                _ZTVN4rtos5timerE
+                0x00003a54       0x24 rtos.o
+                0x00003a54                _ZTVN4rtos5timerE
  .rodata._ZTVN4rtos9task_baseE
-                0x00002dec       0x14 rtos.o
-                0x00002dec                _ZTVN4rtos9task_baseE
+                0x00003a78       0x14 rtos.o
+                0x00003a78                _ZTVN4rtos9task_baseE
+ .rodata._ZTVN5hwlib14window_ostreamE
+                0x00003a8c       0x20 main.o
+                0x00003a8c                _ZTVN5hwlib14window_ostreamE
+ .rodata._ZTVN5hwlib11window_partE
+                0x00003aac       0x14 main.o
+                0x00003aac                _ZTVN5hwlib11window_partE
+ .rodata._ZTVN5hwlib11image_16x16E
+                0x00003ac0        0xc main.o
+                0x00003ac0                _ZTVN5hwlib11image_16x16E
+ .rodata._ZTVN5hwlib18font_default_16x16E
+                0x00003acc        0xc main.o
+                0x00003acc                _ZTVN5hwlib18font_default_16x16E
+ .rodata._ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
+                0x00003ad8       0x10 main.o
+                0x00003ad8                _ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
+ .rodata._ZTVN5hwlib18glcd_oled_bufferedE
+                0x00003ae8       0x18 main.o
+                0x00003ae8                _ZTVN5hwlib18glcd_oled_bufferedE
  .rodata._ZTVN3due7pin_outE
-                0x00002e00       0x10 main.o
-                0x00002e00                _ZTVN3due7pin_outE
+                0x00003b00       0x10 main.o
+                0x00003b00                _ZTVN3due7pin_outE
+ .rodata._ZTVN3due6pin_ocE
+                0x00003b10       0x18 main.o
+                0x00003b10                _ZTVN3due6pin_ocE
  .rodata._ZTVN3due8d2_36kHzE
-                0x00002e10       0x10 main.o
-                0x00002e10                _ZTVN3due8d2_36kHzE
+                0x00003b28       0x10 main.o
+                0x00003b28                _ZTVN3due8d2_36kHzE
  .rodata._ZTVN4rtos4taskILi4096EEE
-                0x00002e20       0x14 main.o
-                0x00002e20                _ZTVN4rtos4taskILi4096EEE
+                0x00003b38       0x14 main.o
+                0x00003b38                _ZTVN4rtos4taskILi4096EEE
+ .rodata._ZZN5hwlib18glcd_oled_bufferedC4ERNS_7i2c_busEjE13init_sequence
+                0x00003b4c       0x29 main.o
+                0x00003b4c                _ZZN5hwlib18glcd_oled_bufferedC4ERNS_7i2c_busEjE13init_sequence
+ *fill*         0x00003b75        0x3 
+ .rodata        0x00003b78      0x800 main.o
  .rodata._ZN18IR_Send_Controller4mainEv.str1.1
-                0x00002e34        0x2 main.o
+                0x00004378        0x2 main.o
  .rodata._ZN4rtos9task_baseD2Ev.str1.1
-                0x00002e34       0x17 main.o
+                0x00004378       0x17 main.o
                                  0x29 (size before relaxing)
-                0x00002e4c                . = ALIGN (0x4)
- *fill*         0x00002e4b        0x1 
+ .rodata._ZN5hwlibL5blackE
+                0x0000438f        0x4 main.o
+ .rodata._ZN5hwlibL5whiteE
+                0x00004393        0x4 main.o
+                0x00004398                . = ALIGN (0x4)
+ *fill*         0x00004397        0x1 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00002e4c                . = ALIGN (0x4)
+                0x00004398                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00002e4c                . = ALIGN (0x4)
+                0x00004398                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00002e4c                . = ALIGN (0x4)
+                0x00004398                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00002e4c                . = ALIGN (0x4)
-                0x00002e4c                __text_end = .
+                0x00004398                . = ALIGN (0x4)
+                0x00004398                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00002e4c        0x0
- .vfp11_veneer  0x00002e4c        0x0 linker stubs
+.vfp11_veneer   0x00004398        0x0
+ .vfp11_veneer  0x00004398        0x0 linker stubs
 
-.v4_bx          0x00002e4c        0x0
- .v4_bx         0x00002e4c        0x0 linker stubs
+.v4_bx          0x00004398        0x0
+ .v4_bx         0x00004398        0x0 linker stubs
 
-.iplt           0x00002e4c        0x0
- .iplt          0x00002e4c        0x0 Beeper.o
+.iplt           0x00004398        0x0
+ .iplt          0x00004398        0x0 Beeper.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00002e4c                . = ALIGN (0x4)
-                0x00002e4c                __exidx_start = .
+                0x00004398                . = ALIGN (0x4)
+                0x00004398                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x00002e4c        0x8
+.ARM.exidx      0x00004398        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00002e4c        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00004398        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x00002e54        0x0
- .rel.iplt      0x00002e54        0x0 Beeper.o
-                0x00002e54                . = ALIGN (0x4)
-                0x00002e54                __exidx_end = .
+.rel.dyn        0x000043a0        0x0
+ .rel.iplt      0x000043a0        0x0 Beeper.o
+                0x000043a0                . = ALIGN (0x4)
+                0x000043a0                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x14050
@@ -1349,9 +1638,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x20014050                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20014050       0x28 load address 0x00002e54
+.data           0x20014050      0xc0c load address 0x000043a0
                 0x20014050                . = ALIGN (0x4)
-                0x00002e54                __data_init_start = LOADADDR (.data)
+                0x000043a0                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20014050                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -1363,33 +1652,36 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .data._ZN3due7hw_uartE
                 0x20014054        0x4 hwlib.o
                 0x20014054                _ZN3due7hw_uartE
+ .data._ZN5hwlib15font_16x16_dataE
+                0x20014058      0xbe4 hwlib.o
+                0x20014058                _ZN5hwlib15font_16x16_dataE
  .data._ZN5hwlib4coutE
-                0x20014058       0x14 hwlib.o
-                0x20014058                _ZN5hwlib4coutE
+                0x20014c3c       0x14 hwlib.o
+                0x20014c3c                _ZN5hwlib4coutE
  .data._ZN17coroutine_context24current_coroutine_sp_ptrE
-                0x2001406c        0x4 coroutine.o
-                0x2001406c                _ZN17coroutine_context24current_coroutine_sp_ptrE
+                0x20014c50        0x4 coroutine.o
+                0x20014c50                _ZN17coroutine_context24current_coroutine_sp_ptrE
  .data._first_free
-                0x20014070        0x4 bmptk_heap_bmptk.o
-                0x20014070                _first_free
+                0x20014c54        0x4 bmptk_heap_bmptk.o
+                0x20014c54                _first_free
  .data._last_free
-                0x20014074        0x4 bmptk_heap_bmptk.o
-                0x20014074                _last_free
-                0x20014078                . = ALIGN (0x4)
-                0x20014078                __data_end = .
+                0x20014c58        0x4 bmptk_heap_bmptk.o
+                0x20014c58                _last_free
+                0x20014c5c                . = ALIGN (0x4)
+                0x20014c5c                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00002e54                __data_init_end = LOADADDR (.data)
+                0x000043a0                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
-                0x00000028                PROVIDE (__data_size, (__data_end - __data_start))
-                0x00000028                PROVIDE (__data_init_size, __data_size)
+                0x00000c0c                PROVIDE (__data_size, (__data_end - __data_start))
+                0x00000c0c                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20014078        0x0 load address 0x00002e7c
- .igot.plt      0x20014078        0x0 Beeper.o
-                0x20014078                . = ALIGN (0x4)
-                0x20014078                __heap_start = .
+.igot.plt       0x20014c5c        0x0 load address 0x00004fac
+ .igot.plt      0x20014c5c        0x0 Beeper.o
+                0x20014c5c                . = ALIGN (0x4)
+                0x20014c5c                __heap_start = .
                 [!provide]                PROVIDE (__heap_start, __heap_start)
-                0x20014078                . = ALIGN (0x4)
+                0x20014c5c                . = ALIGN (0x4)
                 0x20018000                __heap_end = __ram_end
                 [!provide]                PROVIDE (__heap_end, __heap_end)
 
@@ -1411,7 +1703,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xe0
+.debug_aranges  0x00000000      0x100
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
@@ -1427,11 +1719,13 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x000000a0       0x20 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
  .debug_aranges
                 0x000000c0       0x20 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x000000e0       0x20 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1129
+.debug_info     0x00000000     0x1236
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xde c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
  .debug_info    0x000000de       0xde c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
@@ -1440,8 +1734,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .debug_info    0x00000373       0xd9 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
  .debug_info    0x0000044c      0xc00 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
  .debug_info    0x0000104c       0xdd c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00001129      0x10d c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
-.debug_abbrev   0x00000000      0x204
+.debug_abbrev   0x00000000      0x218
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x14 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
  .debug_abbrev  0x00000014       0x14 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
@@ -1450,8 +1745,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .debug_abbrev  0x00000050       0x14 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
  .debug_abbrev  0x00000064      0x18c c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
  .debug_abbrev  0x000001f0       0x14 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000204       0x14 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
-.debug_line     0x00000000      0x74f
+.debug_line     0x00000000      0x820
  *(.debug_line)
  .debug_line    0x00000000      0x189 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
  .debug_line    0x00000189      0x1a5 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
@@ -1460,6 +1756,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .debug_line    0x00000433       0x67 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
  .debug_line    0x0000049a      0x24e c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
  .debug_line    0x000006e8       0x67 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000074f       0xd1 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
 .debug_frame    0x00000000      0x1c4
  *(.debug_frame)
@@ -1487,6 +1784,8 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .comment       0x00000011       0x12 IRSendTask.o
  .comment       0x00000011       0x12 IR_LED.o
  .comment       0x00000011       0x12 Register_entity.o
+ .comment       0x00000011       0x12 HP_entity.o
+ .comment       0x00000011       0x12 OLEDTask.o
  .comment       0x00000011       0x12 hwlib.o
  .comment       0x00000011       0x12 coroutine.o
  .comment       0x00000011       0x12 rtos.o
@@ -1530,35 +1829,41 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
  .ARM.attributes
                 0x000000ff       0x33 Register_entity.o
  .ARM.attributes
-                0x00000132       0x33 hwlib.o
+                0x00000132       0x33 HP_entity.o
  .ARM.attributes
-                0x00000165       0x21 switch_to.o
+                0x00000165       0x33 OLEDTask.o
  .ARM.attributes
-                0x00000186       0x33 coroutine.o
+                0x00000198       0x33 hwlib.o
  .ARM.attributes
-                0x000001b9       0x33 rtos.o
+                0x000001cb       0x21 switch_to.o
  .ARM.attributes
-                0x000001ec       0x33 main.o
+                0x000001ec       0x33 coroutine.o
  .ARM.attributes
-                0x0000021f       0x33 bmptk_cortex.o
+                0x0000021f       0x33 rtos.o
  .ARM.attributes
-                0x00000252       0x33 bmptk_heap_bmptk.o
+                0x00000252       0x33 main.o
  .ARM.attributes
-                0x00000285       0x33 bmptk_fixed_size_stack.o
+                0x00000285       0x33 bmptk_cortex.o
  .ARM.attributes
-                0x000002b8       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
+                0x000002b8       0x33 bmptk_heap_bmptk.o
  .ARM.attributes
-                0x000002db       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
+                0x000002eb       0x33 bmptk_fixed_size_stack.o
  .ARM.attributes
-                0x000002fe       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_fixdfsi.o)
+                0x0000031e       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000321       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
+                0x00000341       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000344       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x00000364       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_arm_fixdfsi.o)
  .ARM.attributes
-                0x00000367       0x33 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x00000387       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
  .ARM.attributes
-                0x0000039a       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x000003aa       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x000003cd       0x33 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000400       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000423       0x21 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/thumb/cortex_m3\libc.a(lib_a-memcpy.o)
 
 /DISCARD/
  *(.note.GNU-stack)

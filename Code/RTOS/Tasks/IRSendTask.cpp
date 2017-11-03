@@ -5,8 +5,7 @@ IR_Send_Controller::IR_Send_Controller(IR_LED & ir_led, Register_entity & regist
     ir_led(ir_led),
     register_entity(register_entity),
     MessageChannel( this, "MessageChannel" ),
-    MessageFlag(this, "MessageChannel"),
-    IRTimer(this, "IRTimer")
+    MessageFlag(this, "MessageChannel")
 {}
 
 void IR_Send_Controller::send_signal( int signal )
