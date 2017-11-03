@@ -1,17 +1,18 @@
 #include "RunGameTask.hpp"
 
-Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Controller & ir_send, OLED_Controller & oled, Register_entity & reg ):
+Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Controller & ir_send, OLED_Controller & oled, Register_entity & reg, HP_entity & hp ):
         task(3, "RunGameTask"),
         beeper(beeper),
         ir_send(ir_send),
         oled(oled),
-        reg(reg)
+        reg(reg),
+        hp(hp)
 //        GameStarted(this, "GameStarted")
 {}
 
-void Run_Game_Controller::setGameStarted(){
-//    GameStarted.set();
-}
+//void Run_Game_Controller::setGameStarted(){
+////    GameStarted.set();
+//}
 
 int Run_Game_Controller::timePassed(int timeStamp){
     

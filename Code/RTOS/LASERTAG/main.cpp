@@ -7,7 +7,7 @@
 #include "Register_entity.hpp"
 #include "IR_LED.hpp"
 #include "IRSendTask.hpp"
-#include "OLEDTask.hpp"
+#include "OLED_Controller.hpp"
 #include "HP_entity.hpp"
 
 int main( void ){	
@@ -60,16 +60,15 @@ int main( void ){
     IR_LED ir_led(ir);
     Register_entity reg(1,1,120);
     HP_entity hp(100);
+    auto OLEDController = OLED_Controller(oled, d1, d2, d3, d4);
     
     auto BeeperTask = Beeper_Controller( beeper );
     auto SendTask = IR_Send_Controller(ir_led, reg );
-    auto OLEDTask = OLED_Controller(oled, d1, d2, d3, d4, reg, hp);
-    auto RunGameTask = Run_Game_Controller( BeeperTask, SendTask, OLEDTask, reg);
+    auto RunGameTask = Run_Game_Controller( BeeperTask, SendTask, OLEDController, reg, hp);
    
     hwlib::wait_ms(500);
     (void) BeeperTask;
     (void) SendTask;
-    (void) OLEDTask;
     (void) RunGameTask;
     rtos::run();
 

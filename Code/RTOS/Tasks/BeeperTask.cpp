@@ -1,29 +1,29 @@
 #include "BeeperTask.hpp"
 
 Beeper_Controller::Beeper_Controller(Beeper & beeper):
-        task(2, "Beeper_Controller"),
+        task(2, "BeeperTask"),
         beeper(beeper),
-        SoundType("SoundType"),
+        SoundPool("SoundPool"),
         SoundMutex("SoundMutex"),
         SoundFlag(this, "SoundFlag")
     {}
 
-void Beeper_Controller::setSoundType(int value){
+void Beeper_Controller::setSoundPool(int value){
     SoundMutex.wait();
     SoundType.write(value);
     SoundMutex.signal();
 }
 
-int Beeper_Controller::getSoundType(){
+int Beeper_Controller::getSoundPool(){
     SoundMutex.wait();
     int n = SoundType.read();
     SoundMutex.signal();
     return n;
 }
 
-void Beeper_Controller::resetSoundType(){
+void Beeper_Controller::resetSoundPool(){
     SoundMutex.wait();
-    SoundType.write(0);
+    SoundPool.write(0);
     SoundMutex.signal();
 }
 

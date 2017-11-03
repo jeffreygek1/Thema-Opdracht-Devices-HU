@@ -9,17 +9,16 @@
 class Beeper_Controller: public rtos::task<>{
 private:
     Beeper beeper;
-    rtos::pool<int> SoundType;
+    rtos::pool<int> SoundPool;
     rtos::mutex SoundMutex;
     rtos::flag SoundFlag;
 public: 
     Beeper_Controller(Beeper & beeper);
     
-    void setSoundType(int value);
-    int getSoundType();
-    void resetSoundType();
+    void setSoundPool(int value);
+    int getSoundPool();
+    void resetSoundPool();
     
-    void setPlaySound();
     void setSoundFlag();
     
     void shootSound();
@@ -27,24 +26,24 @@ public:
     void hitSound();
     
     void main() override{
-        int s;
+        int sound;
         for(;;){
             wait(SoundFlag);
-            s = getSoundType();
+            sound = SoundPool();
             switch(s){
                 case 0:
                     break;
                 case 1:
                     shootSound();
-                    resetSoundType();
+                    resetSoundPool();
                     break;
                 case 2:
                     gameOverSound();
-                    resetSoundType();
+                    resetSoundPool();
                     break;
                 case 3:
                     hitSound();
-                    resetSoundType();
+                    resetSoundPool();
                     break;
                 default:
                     break;

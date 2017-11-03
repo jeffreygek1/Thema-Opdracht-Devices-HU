@@ -1,9 +1,9 @@
 #include "IRSendTask.hpp"
 
-IR_Send_Controller::IR_Send_Controller(IR_LED & ir_led, Register_entity & register_entity):
+IR_Send_Controller::IR_Send_Controller(IR_LED & ir_led, Register_entity & reg):
     task(1, "IRSendTask"),
     ir_led(ir_led),
-    register_entity(register_entity),
+    reg(reg),
     MessageChannel( this, "MessageChannel" ),
     MessageFlag(this, "MessageChannel")
 {}
@@ -35,11 +35,11 @@ void IR_Send_Controller::send_signal( int signal )
 /// to the IR protocol assigned to this assignment. This value is returned for further use. 
 int IR_Send_Controller::encode_signal(int Message)
 {
-    if(register_entity.getPN() != 0){
-        Message = register_entity.getFP();
+    if(reg.getPN() != 0){
+        Message = reg.getFP();
     }
-    int checksum = (register_entity.getPN()^Message);
-    return ((1<<15)|(register_entity.getPN()<<10)|(Message<<5)|checksum);
+    int checksum = (reg.getPN()^Message);
+    return ((1<<15)|(reg.getPN()<<10)|(Message<<5)|checksum);
 }
 
 void IR_Send_Controller::setMessageChannel(int value){
