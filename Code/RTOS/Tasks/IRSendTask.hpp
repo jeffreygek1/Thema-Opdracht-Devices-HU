@@ -14,7 +14,6 @@ private:
     Register_entity & register_entity;
     rtos::channel< int, 10 > MessageChannel;
     rtos::flag MessageFlag;
-    rtos::timer IRTimer;
     int Message;
     int checksum;
 public:
