@@ -13,7 +13,9 @@ int main(int argc, char **argv)
    
    IR_LED ir_send(ir_led);
    IR_Send_Controller ir_control(ir_send);
-   Register_entity register_entity(12,4,0);
+   int player_number = 12;
+   int data = 4;
+   Register_entity register_entity(player_number,data,0);
    int value = 5524;
    
    hwlib::wait_ms( 500 );

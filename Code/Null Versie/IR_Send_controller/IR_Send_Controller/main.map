@@ -772,31 +772,30 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x0000013e       0x54 IR_Send_Controller.o
                 0x0000013e                _ZN18IR_Send_Controller11send_signalEi
  .text._ZN18IR_Send_Controller13encode_signalERiR15Register_entity
-                0x00000192       0x36 IR_Send_Controller.o
+                0x00000192       0x38 IR_Send_Controller.o
                 0x00000192                _ZN18IR_Send_Controller13encode_signalERiR15Register_entity
  .text._ZN15Register_entityC2Eiii
-                0x000001c8        0x8 Register_entity.o
-                0x000001c8                _ZN15Register_entityC2Eiii
-                0x000001c8                _ZN15Register_entityC1Eiii
+                0x000001ca        0x8 Register_entity.o
+                0x000001ca                _ZN15Register_entityC2Eiii
+                0x000001ca                _ZN15Register_entityC1Eiii
  .text._ZN15Register_entity5getFPEv
-                0x000001d0        0x4 Register_entity.o
-                0x000001d0                _ZN15Register_entity5getFPEv
+                0x000001d2        0x4 Register_entity.o
+                0x000001d2                _ZN15Register_entity5getFPEv
  .text._ZN15Register_entity5getPNEv
-                0x000001d4        0x4 Register_entity.o
-                0x000001d4                _ZN15Register_entity5getPNEv
+                0x000001d6        0x4 Register_entity.o
+                0x000001d6                _ZN15Register_entity5getPNEv
  .text._ZN5hwlib7pin_out5flushEv
-                0x000001d8        0x2 hwlib.o
-                0x000001d8                _ZN5hwlib7pin_out5flushEv
- .text._ZN5hwlib7ostream5flushEv
                 0x000001da        0x2 hwlib.o
-                0x000001da                _ZN5hwlib7ostream5flushEv
+                0x000001da                _ZN5hwlib7pin_out5flushEv
+ .text._ZN5hwlib7ostream5flushEv
+                0x000001dc        0x2 hwlib.o
+                0x000001dc                _ZN5hwlib7ostream5flushEv
  .text._ZN5hwlib7ostream6fillerEi
-                0x000001dc       0x1a hwlib.o
-                0x000001dc                _ZN5hwlib7ostream6fillerEi
+                0x000001de       0x1a hwlib.o
+                0x000001de                _ZN5hwlib7ostream6fillerEi
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x000001f6       0x54 hwlib.o
-                0x000001f6                _ZN5hwliblsERNS_7ostreamEPKc
- *fill*         0x0000024a        0x2 
+                0x000001f8       0x54 hwlib.o
+                0x000001f8                _ZN5hwliblsERNS_7ostreamEPKc
  .text._ZN3due9uart_initEv
                 0x0000024c       0x60 hwlib.o
                 0x0000024c                _ZN3due9uart_initEv

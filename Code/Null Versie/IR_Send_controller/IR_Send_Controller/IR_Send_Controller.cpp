@@ -33,5 +33,5 @@ int IR_Send_Controller::encode_signal(int & Message, Register_entity & register_
         Message = register_entity.getFP();
     }
     int checksum = (register_entity.getPN()^Message);
-    return ((1<<15)|(Message<<10)|(register_entity.getPN()<<5)|checksum);
+    return ((1<<15)|(register_entity.getPN()<<10)|(Message<<5)|checksum);
 }
