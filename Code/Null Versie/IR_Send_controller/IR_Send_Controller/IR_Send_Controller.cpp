@@ -1,6 +1,7 @@
 #include "IR_Send_Controller.hpp"
 void IR_Send_Controller::send_signal( int signal )
 {
+    //for (int i=0; i<16; ++i)
     for (int i=0; i<16; ++i)
     {
         if (signal & 0x8000)
@@ -9,6 +10,7 @@ void IR_Send_Controller::send_signal( int signal )
             hwlib::wait_us(1600);
             ir_led.set(0);
             hwlib::wait_us(800);
+            //hwlib::cout << "1";
         } 
         else
         {
@@ -16,6 +18,7 @@ void IR_Send_Controller::send_signal( int signal )
             hwlib::wait_us(800);
             ir_led.set(0);
             hwlib::wait_us(1600);
+            //hwlib::cout << "0";
         }
         signal = signal << 1;
     }

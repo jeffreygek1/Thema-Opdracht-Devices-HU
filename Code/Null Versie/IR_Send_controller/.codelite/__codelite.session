@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\Null versie\IR_Send_controller\__codelite.workspace">
+<Session Name="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\Null Versie\IR_Send_controller\__codelite.workspace">
   <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\Null versie\IR_Send_controller\__codelite.workspace" Name="m_workspaceName"/>
+  <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\Null Versie\IR_Send_controller\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\Null versie\IR_Send_controller\IR_Send_Controller\IR_Send_Controller.cpp" Name="FileName"/>
+      <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\Null Versie\IR_Send_controller\IR_Send_Controller\main.cpp" Name="FileName"/>
+      <int Value="12" Name="FirstVisibleLine"/>
+      <int Value="25" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\Null Versie\IR_Send_controller\IR_Send_Controller\IR_Send_Controller.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="35" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

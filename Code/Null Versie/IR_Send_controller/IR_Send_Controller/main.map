@@ -738,7 +738,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0xa20
+.text           0x00000000      0xa2c
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -840,72 +840,72 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x0000055c       0x18 main.o
                 0x0000055c                _ZN3due8d2_36kHz3setEbN5hwlib9bufferingE
  .text.startup.main
-                0x00000574       0xe8 main.o
+                0x00000574       0xf4 main.o
                 0x00000574                main
  .text.__startup
-                0x0000065c       0x48 bmptk_cortex.o
-                0x0000065c                __startup
- .text          0x000006a4       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                0x000006a4                __aeabi_uldivmod
- .text          0x000006d4      0x2dc c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
-                0x000006d4                __udivmoddi4
- .text          0x000009b0        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
-                0x000009b0                __aeabi_ldiv0
-                0x000009b4                . = ALIGN (0x4)
+                0x00000668       0x48 bmptk_cortex.o
+                0x00000668                __startup
+ .text          0x000006b0       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x000006b0                __aeabi_uldivmod
+ .text          0x000006e0      0x2dc c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x000006e0                __udivmoddi4
+ .text          0x000009bc        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x000009bc                __aeabi_ldiv0
+                0x000009c0                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x000009b4        0x0 linker stubs
- .glue_7t       0x000009b4        0x0 linker stubs
-                0x000009b4                . = ALIGN (0x4)
+ .glue_7        0x000009c0        0x0 linker stubs
+ .glue_7t       0x000009c0        0x0 linker stubs
+                0x000009c0                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x000009b4       0x10 hwlib.o
-                0x000009b4                _ZTVN5hwlib20cout_using_uart_putcE
+                0x000009c0       0x10 hwlib.o
+                0x000009c0                _ZTVN5hwlib20cout_using_uart_putcE
  .rodata._ZN4rtos9task_base5blockEv.str1.1
-                0x000009c4       0x4b rtos.o
- *fill*         0x00000a0f        0x1 
+                0x000009d0       0x4b rtos.o
+ *fill*         0x00000a1b        0x1 
  .rodata._ZTVN3due8d2_36kHzE
-                0x00000a10       0x10 main.o
-                0x00000a10                _ZTVN3due8d2_36kHzE
+                0x00000a1c       0x10 main.o
+                0x00000a1c                _ZTVN3due8d2_36kHzE
  .rodata.main.str1.1
-                0x00000a20        0x2 main.o
-                0x00000a24                . = ALIGN (0x4)
+                0x00000a2c        0x2 main.o
+                0x00000a30                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000a24                . = ALIGN (0x4)
+                0x00000a30                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000a24                . = ALIGN (0x4)
+                0x00000a30                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000a24                . = ALIGN (0x4)
+                0x00000a30                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000a24                . = ALIGN (0x4)
-                0x00000a24                __text_end = .
+                0x00000a30                . = ALIGN (0x4)
+                0x00000a30                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000a20        0x0
- .vfp11_veneer  0x00000a20        0x0 linker stubs
+.vfp11_veneer   0x00000a2c        0x0
+ .vfp11_veneer  0x00000a2c        0x0 linker stubs
 
-.v4_bx          0x00000a20        0x0
- .v4_bx         0x00000a20        0x0 linker stubs
+.v4_bx          0x00000a2c        0x0
+ .v4_bx         0x00000a2c        0x0 linker stubs
 
-.iplt           0x00000a20        0x0
- .iplt          0x00000a20        0x0 IR_LED.o
+.iplt           0x00000a2c        0x0
+ .iplt          0x00000a2c        0x0 IR_LED.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000a20                . = ALIGN (0x4)
-                0x00000a20                __exidx_start = .
+                0x00000a2c                . = ALIGN (0x4)
+                0x00000a2c                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x00000a20        0x8
+.ARM.exidx      0x00000a2c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000a20        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000a2c        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x00000a28        0x0
- .rel.iplt      0x00000a28        0x0 IR_LED.o
-                0x00000a28                . = ALIGN (0x4)
-                0x00000a28                __exidx_end = .
+.rel.dyn        0x00000a34        0x0
+ .rel.iplt      0x00000a34        0x0 IR_LED.o
+                0x00000a34                . = ALIGN (0x4)
+                0x00000a34                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x14020
@@ -955,9 +955,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x20014020                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20014020       0x20 load address 0x00000a28
+.data           0x20014020       0x20 load address 0x00000a34
                 0x20014020                . = ALIGN (0x4)
-                0x00000a28                __data_init_start = LOADADDR (.data)
+                0x00000a34                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20014020                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -978,13 +978,13 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/6.2.0/../../../../arm-eabi/lib/t
                 0x20014040                . = ALIGN (0x4)
                 0x20014040                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000a28                __data_init_end = LOADADDR (.data)
+                0x00000a34                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000020                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000020                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20014040        0x0 load address 0x00000a48
+.igot.plt       0x20014040        0x0 load address 0x00000a54
  .igot.plt      0x20014040        0x0 IR_LED.o
                 0x20014040                . = ALIGN (0x4)
                 0x20014040                __heap_start = .

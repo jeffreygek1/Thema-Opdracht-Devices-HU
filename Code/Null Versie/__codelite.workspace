@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="example code" Database="" Version="10.0.0">
-  <Project Name="ir-led" Path="ir-led/_codelite.project" Active="Yes"/>
+<CodeLite_Workspace Name="example code" Database="">
+  <Project Name="ir-led" Path="ir-led/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="ir-led" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
   <Project Name="ir-sensor" Path="ir-sensor/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="ir-sensor" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
 </CodeLite_Workspace>
