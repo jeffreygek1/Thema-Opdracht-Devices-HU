@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Tasks" InternalType="Console">
+<CodeLite_Project Name="Tasks" InternalType="Console" Version="10.0.0">
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00010001N0005Debug000000000000]]>
@@ -27,6 +27,10 @@
     <File Name="IRSendTask.hpp"/>
     <File Name="RunGameTask.cpp"/>
     <File Name="RunGameTask.hpp"/>
+    <File Name="KeyPadTask.hpp"/>
+    <File Name="KeyPadTask.cpp"/>
+    <File Name="IRReceiveTask.hpp"/>
+    <File Name="IRReceiveTask.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

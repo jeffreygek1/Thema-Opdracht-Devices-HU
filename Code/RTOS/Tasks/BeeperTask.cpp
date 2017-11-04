@@ -10,13 +10,13 @@ Beeper_Controller::Beeper_Controller(Beeper & beeper):
 
 void Beeper_Controller::setSoundPool(int value){
     SoundMutex.wait();
-    SoundType.write(value);
+    SoundPool.write(value);
     SoundMutex.signal();
 }
 
 int Beeper_Controller::getSoundPool(){
     SoundMutex.wait();
-    int n = SoundType.read();
+    int n = SoundPool.read();
     SoundMutex.signal();
     return n;
 }

@@ -29,8 +29,8 @@ public:
         int sound;
         for(;;){
             wait(SoundFlag);
-            sound = SoundPool();
-            switch(s){
+            sound = getSoundPool();
+            switch(sound){
                 case 0:
                     break;
                 case 1:
@@ -48,7 +48,7 @@ public:
                 default:
                     break;
             }
-            hwlib::wait_us(500);
+            //hwlib::wait_us(500);
 
             
         }

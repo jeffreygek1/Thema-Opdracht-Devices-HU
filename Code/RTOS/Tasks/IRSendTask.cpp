@@ -4,8 +4,8 @@ IR_Send_Controller::IR_Send_Controller(IR_LED & ir_led, Register_entity & reg):
     task(1, "IRSendTask"),
     ir_led(ir_led),
     reg(reg),
-    MessageChannel( this, "MessageChannel" ),
-    MessageFlag(this, "MessageChannel")
+    SendChannel( this, "SendChannel" ),
+    SendFlag(this, "SendFlag")
 {}
 
 void IR_Send_Controller::send_signal( int signal )
@@ -42,14 +42,15 @@ int IR_Send_Controller::encode_signal(int Message)
     return ((1<<15)|(reg.getPN()<<10)|(Message<<5)|checksum);
 }
 
-void IR_Send_Controller::setMessageChannel(int value){
-    MessageChannel.write(value);
+void IR_Send_Controller::setSendChannel(int value){
+    SendChannel.write(value);
 }
 
-int IR_Send_Controller::getMessageChannel(){
-    return MessageChannel.read();
+int IR_Send_Controller::getSendChannel(){
+    int value = SendChannel.read();
+    return value;
 }
 
-void IR_Send_Controller::setMessageFlag(){
-    MessageFlag.set();
+void IR_Send_Controller::setSendFlag(){
+    SendFlag.set();
 }

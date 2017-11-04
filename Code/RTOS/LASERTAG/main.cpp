@@ -9,6 +9,9 @@
 #include "IRSendTask.hpp"
 #include "OLED_Controller.hpp"
 #include "HP_entity.hpp"
+#include "KeyPadTask.hpp"
+#include "IRReceiveTask.hpp"
+#include "IR_Receiver.hpp"
 
 int main( void ){	
     
@@ -17,10 +20,16 @@ int main( void ){
    
     // wait for the PC terminal to start
     hwlib::wait_ms( 500 );
+    
+    auto sw_test = hwlib::target::pin_in( hwlib::target::pins::d6 ); 
    
     auto lsp = hwlib::target::pin_out( hwlib::target::pins::d7 );
     auto ir = hwlib::target::d2_36kHz();
-   
+    
+    auto tsop_signal = hwlib::target::pin_in( hwlib::target::pins::d8 );
+    auto tsop_gnd    = hwlib::target::pin_out( hwlib::target::pins::d9 );
+    auto tsop_vdd    = hwlib::target::pin_out( hwlib::target::pins::d10 );
+    
     auto scl = hwlib::target::pin_oc( hwlib::target::pins::scl );
     auto sda = hwlib::target::pin_oc( hwlib::target::pins::sda );
    
@@ -58,18 +67,23 @@ int main( void ){
    
     Beeper beeper(lsp);
     IR_LED ir_led(ir);
+    IR_Receiver receiver(tsop_signal, tsop_gnd, tsop_vdd);
     Register_entity reg(1,1,120);
     HP_entity hp(100);
     auto OLEDController = OLED_Controller(oled, d1, d2, d3, d4);
     
     auto BeeperTask = Beeper_Controller( beeper );
-    auto SendTask = IR_Send_Controller(ir_led, reg );
-    auto RunGameTask = Run_Game_Controller( BeeperTask, SendTask, OLEDController, reg, hp);
+    auto IRSendTask = IR_Send_Controller(ir_led, reg );
+    auto RunGameTask = Run_Game_Controller( BeeperTask, IRSendTask, OLEDController, reg, hp);
+    auto IRReceiveTask = IR_Receiver_Controller(receiver, RunGameTask);
+    auto KeyPadTask = KeyPad_Controller(sw_test, RunGameTask);
    
     hwlib::wait_ms(500);
     (void) BeeperTask;
-    (void) SendTask;
+    (void) IRSendTask;
     (void) RunGameTask;
+    (void) IRReceiveTask;
+    (void) KeyPadTask;
     rtos::run();
 
    
