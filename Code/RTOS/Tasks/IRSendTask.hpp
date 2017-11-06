@@ -25,6 +25,7 @@ public:
     int getSendChannel();
     void setSendFlag();
     
+    
     void main() override{
          int signal;
         for(;;){

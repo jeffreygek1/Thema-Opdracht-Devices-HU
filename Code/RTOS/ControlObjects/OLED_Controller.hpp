@@ -31,6 +31,7 @@ public:
     void printTime ( int value );
     void updateDisplay();
     void printGameOver();
+    void printCommand( int value);
 
 };
 

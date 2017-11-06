@@ -14,10 +14,10 @@ EntityObjects := C:/ti-software/Thema-Opdracht-Devices-HU/Code/RTOS/EntityObject
 Tasks := C:/ti-software/Thema-Opdracht-Devices-HU/Code/RTOS/Tasks
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := Beeper.cpp BeeperTask.cpp RunGameTask.cpp IRSendTask.cpp IR_LED.cpp Register_entity.cpp HP_entity.cpp OLED_Controller.cpp KeyPadTask.cpp IRReceiveTask.cpp IR_Receiver.cpp
+SOURCES := IRSendTask.cpp IR_LED.cpp OLED_Controller.cpp KeyPadTask_init.cpp
 
 # header files in this project
-HEADERS := Beeper.hpp BeeperTask.hpp RunGameTask.hpp IRSendTask.hpp IR_LED.hpp Register_entity.hpp HP_entity.hpp OLED_Controller.hpp KeyPadTask.hpp IRReceiveTask.hpp IR_Receiver.hpp
+HEADERS := IRSendTask.hpp IR_LED.hpp OLED_Controller.hpp KeyPadTask_init.hpp
 
 # other places to look for files for this project
 SEARCH  := $(BoundaryObjects) $(ControlObjects) $(EntityObjects) $(Tasks)

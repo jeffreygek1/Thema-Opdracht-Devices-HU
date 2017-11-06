@@ -52,3 +52,7 @@ void OLED_Controller::printGameOver(){
      flush(); 
 }
 
+void OLED_Controller::printCommand(int value){
+    cout << "\f" << value << "\n";
+}
+
