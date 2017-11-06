@@ -34,14 +34,10 @@ void OLED_Controller::printPlayerNumber(int value){
         << "=ID:" << value << "==" << "\n";
 }
 
-void OLED_Controller::printHP(int hp, int du){
+void OLED_Controller::printHP_DU(int hp, int du){
     cout2 << "\f" 
         << "HP:" << hp << "\n"
         << "T :" << du << "s" << "\n" ;
-}
-
-void OLED_Controller::printTime(int value){
-//    cout3 << "\f" << "T:" << value << "s" << "\n";
 }
 
 void OLED_Controller::printGameOver(){

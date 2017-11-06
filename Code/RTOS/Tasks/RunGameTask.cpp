@@ -59,3 +59,21 @@ int Run_Game_Controller::timePassed(int timeStamp){
     int remain_time = (reg.getDU() - (hwlib::now_us() - timeStamp) / 1'000'000);
     return remain_time;
 }
+
+bool Run_Game_Controller::arrayIsEmpty(int arg){
+    return (arg == 0);
+}
+
+int Run_Game_Controller::charArrayToInt(char arr[4], int len){
+    int result = 0;
+    for(int i=0; i<len; i++){
+        result = result * 10 + ( arr[i] - '0' );
+    }
+    return result;
+}
+
+void Run_Game_Controller::clearArray(char arr[4], int len){
+    for(int i=0; i<len; i++){
+        arr[i] = '0';
+    }
+}

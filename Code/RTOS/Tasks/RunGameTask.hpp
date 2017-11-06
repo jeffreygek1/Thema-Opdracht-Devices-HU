@@ -18,7 +18,8 @@ private:
     Register_entity & reg;
     HP_entity & hp;
     int state = 0;
-//    rtos::flag GameStartedFlag;
+    int playerNumberSize=0;
+    int firePowerSize=0;
     rtos::channel< char, 10 > KeyValueChannel;
     rtos::channel<int, 10> MessageChannelPN;
     rtos::channel<int, 10> MessageChannelData;
@@ -27,7 +28,6 @@ private:
 public: 
     Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Controller & ir_send, OLED_Controller & oled, Register_entity & reg, HP_entity & hp);
     
-    //void setGameStartedFlag();
     // void countDown(int dur);
     char getKeyValueChannel();
     void setKeyValueChannel(char key);
@@ -41,31 +41,87 @@ public:
     
     int timePassed(int timeStamp);
     
+    bool arrayIsEmpty(int arg);
+    int charArrayToInt(char arr[4], int len);
+    void clearArray(char arr[4], int len);
+    
     void main() override{
         int remainTime;
         int timeStamp = hwlib::now_us();
         char key;
         int pn;
         int data;
-        oled.printPlayerNumber( reg.getPN() );
-//        oled.printHP( hp.getHP() );
-//        oled.printTime( reg.getDU() );
-        oled.printHP(hp.getHP(), reg.getDU());
-        oled.flush();
+        bool hasBeenInit = false;
+        char playerNumber[4];
+        char firePower[4];
         for (;;){
             remainTime = timePassed(timeStamp);
             switch(state){
                 case 0:
+                    wait(KeyPressedFlag);
+                        key = getKeyValueChannel();
+                        if (key == 'A'){
+                            while(true){
+                                wait(KeyPressedFlag);
+                                    key = getKeyValueChannel();
+                                    while( key != 'B' && arrayIsEmpty(playerNumberSize) ){
+                                        wait(KeyPressedFlag);
+                                        key = getKeyValueChannel();
+                                            if (key >= '0' && key <= '9' && charArrayToInt(playerNumber, playerNumberSize) < 32 ){
+                                                playerNumber[playerNumberSize++] = key;
+                                            }else{
+                                                clearArray(playerNumber, playerNumberSize);
+                                                playerNumberSize = 0;
+                                            }
+                                    }
+                                reg.setPN(charArrayToInt(playerNumber, playerNumberSize));
+                                wait(KeyPressedFlag);
+                                    key = getKeyValueChannel();
+                                    while( key != 'B' && arrayIsEmpty(firePowerSize) ){
+                                        wait(KeyPressedFlag);
+                                        key = getKeyValueChannel();
+                                            if (key >= '0' && key <= '9' && charArrayToInt(firePower, firePowerSize) < 32 ){
+                                                firePower[firePowerSize++] = key;
+                                            }else{
+                                                clearArray(firePower, firePowerSize);
+                                                firePowerSize = 0;
+                                            }
+                                    }
+                                reg.setFP(charArrayToInt(firePower, firePowerSize));
+                                wait(ReceiveFlag);
+                                    pn = getMessageChannelPN();
+                                    data = getMessageChannelData();
+                                    while(pn != 0 && data == 0){
+                                        wait(ReceiveFlag);
+                                        pn = getMessageChannelPN();
+                                        data = getMessageChannelData();
+                                    }
+                                reg.setDU(data*60);
+                                while(pn != 0 && data != 0){}
+                                state = 1;
+                                break;
+                            }
+                        }    
+                    break;
+                
+                case 1:
+                    if ( hasBeenInit == false ){
+                        oled.printPlayerNumber( reg.getPN() );
+                        oled.printHP_DU(hp.getHP(), reg.getDU());
+                        oled.flush();
+                        hasBeenInit = true;
+                    }
+                    
                     if(remainTime <= 0){
                         hwlib::cout << 'e';
                     }
-                    const rtos::event & evt = wait();
-                    if (evt == ReceiveFlag){
+                    const rtos::event & evt_rungame = wait();
+                    if (evt_rungame == ReceiveFlag){
                         pn = getMessageChannelPN();
                         data = getMessageChannelData();
                         hwlib::cout << 'r';
                         hp.setHP( hp.getHP() - data );
-                   }else if (evt == KeyPressedFlag){
+                    }else if (evt_rungame == KeyPressedFlag){
                         key = getKeyValueChannel();
                         switch(key){
                             case '*':
@@ -73,17 +129,14 @@ public:
                                 ir_send.setSendChannel(0);
                                 beeper.setSoundFlag();
                                 beeper.setSoundPool(1);
-//                                oled.printHP( hp.getHP() );
-//                                oled.printTime( remainTime );
-//                                oled.flush();
-                                oled.printHP(hp.getHP(), remainTime);
+                                oled.printHP_DU(hp.getHP(), remainTime);
                                 oled.flush();
-                                //hwlib::wait_ms( 50'000 );
                                 break;
                         }
                     }
-                    
                     break;    
+                
+                
                 }
             }
     }
