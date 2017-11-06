@@ -1,29 +1,30 @@
 #include "BeeperTask.hpp"
 
 Beeper_Controller::Beeper_Controller(Beeper & beeper):
-        task(2, "Beeper_Controller"),
+        task(2, "BeeperTask"),
         beeper(beeper),
-        SoundType("SoundType"),
+        SoundPool("SoundPool"),
         SoundMutex("SoundMutex"),
-        SoundFlag(this, "SoundFlag")
+        SoundFlag(this, "SoundFlag"),
+        SoundTimer(this, "SoundTimer")
     {}
 
-void Beeper_Controller::setSoundType(int value){
+void Beeper_Controller::setSoundPool(int value){
     SoundMutex.wait();
-    SoundType.write(value);
+    SoundPool.write(value);
     SoundMutex.signal();
 }
 
-int Beeper_Controller::getSoundType(){
+int Beeper_Controller::getSoundPool(){
     SoundMutex.wait();
-    int n = SoundType.read();
+    int n = SoundPool.read();
     SoundMutex.signal();
     return n;
 }
 
-void Beeper_Controller::resetSoundType(){
+void Beeper_Controller::resetSoundPool(){
     SoundMutex.wait();
-    SoundType.write(0);
+    SoundPool.write(0);
     SoundMutex.signal();
 }
 
@@ -50,8 +51,9 @@ void Beeper_Controller::gameOverSound(){
 
 void Beeper_Controller::hitSound(){
     for( int i = 0; i < 2; i++ ){
+       SoundTimer.set(20'000);
        beeper.beep( 1000, 50000 );
-       hwlib::wait_us( 20'000 );
+       wait(SoundTimer);
    }
 }
 

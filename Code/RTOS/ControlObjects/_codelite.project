@@ -21,6 +21,8 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
+    <File Name="OLED_Controller.cpp"/>
+    <File Name="OLED_Controller.hpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

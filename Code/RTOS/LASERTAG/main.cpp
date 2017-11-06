@@ -7,8 +7,11 @@
 #include "Register_entity.hpp"
 #include "IR_LED.hpp"
 #include "IRSendTask.hpp"
-#include "OLEDTask.hpp"
+#include "OLED_Controller.hpp"
 #include "HP_entity.hpp"
+#include "KeyPadTask.hpp"
+#include "IRReceiveTask.hpp"
+#include "IR_Receiver.hpp"
 
 int main( void ){	
     
@@ -17,10 +20,16 @@ int main( void ){
    
     // wait for the PC terminal to start
     hwlib::wait_ms( 500 );
+    
+    auto sw_test = hwlib::target::pin_in( hwlib::target::pins::d6 ); 
    
     auto lsp = hwlib::target::pin_out( hwlib::target::pins::d7 );
     auto ir = hwlib::target::d2_36kHz();
-   
+    
+    auto tsop_signal = hwlib::target::pin_in( hwlib::target::pins::d8 );
+    auto tsop_gnd    = hwlib::target::pin_out( hwlib::target::pins::d9 );
+    auto tsop_vdd    = hwlib::target::pin_out( hwlib::target::pins::d10 );
+    
     auto scl = hwlib::target::pin_oc( hwlib::target::pins::scl );
     auto sda = hwlib::target::pin_oc( hwlib::target::pins::sda );
    
@@ -38,12 +47,12 @@ int main( void ){
       hwlib::location( 128, 16));
     auto w2 = hwlib::window_part( 
       oled, 
-      hwlib::location( 0, 16 ),
-      hwlib::location( 128, 32));
-    auto w3 = hwlib::window_part( 
-      oled, 
-      hwlib::location( 0, 32 ),
-      hwlib::location( 128, 48));
+      hwlib::location( 40, 16 ),
+      hwlib::location( 88, 32));
+//    auto w3 = hwlib::window_part( 
+//      oled, 
+//      hwlib::location( 0, 32 ),
+//      hwlib::location( 128, 48));
     
     auto w4 = hwlib::window_part( 
       oled, 
@@ -51,26 +60,32 @@ int main( void ){
       hwlib::location( 128, 64));
       
     auto f = hwlib::font_default_16x16();
+    auto f2 = hwlib::font_default_8x8();
+    
     auto d1 = hwlib::window_ostream( w1, f );
-    auto d2 = hwlib::window_ostream( w2, f );
-    auto d3 = hwlib::window_ostream( w3, f );
+    auto d2 = hwlib::window_ostream( w2, f2 );
+//    auto d3 = hwlib::window_ostream( w3, f );
     auto d4 = hwlib::window_ostream( w4, f );
    
     Beeper beeper(lsp);
     IR_LED ir_led(ir);
-    Register_entity reg(1,1,120);
+    IR_Receiver receiver(tsop_signal, tsop_gnd, tsop_vdd);
+    Register_entity reg(1,1,100);
     HP_entity hp(100);
+    auto OLEDController = OLED_Controller(oled, d1, d2, /*d3, */d4);
     
     auto BeeperTask = Beeper_Controller( beeper );
-    auto SendTask = IR_Send_Controller(ir_led, reg );
-    auto OLEDTask = OLED_Controller(oled, d1, d2, d3, d4, reg, hp);
-    auto RunGameTask = Run_Game_Controller( BeeperTask, SendTask, OLEDTask, reg);
+    auto IRSendTask = IR_Send_Controller(ir_led, reg );
+    auto RunGameTask = Run_Game_Controller( BeeperTask, IRSendTask, OLEDController, reg, hp);
+    auto IRReceiveTask = IR_Receiver_Controller(receiver, RunGameTask);
+    auto KeyPadTask = KeyPad_Controller(sw_test, RunGameTask);
    
     hwlib::wait_ms(500);
     (void) BeeperTask;
-    (void) SendTask;
-    (void) OLEDTask;
+    (void) IRSendTask;
     (void) RunGameTask;
+    (void) IRReceiveTask;
+    (void) KeyPadTask;
     rtos::run();
 
    

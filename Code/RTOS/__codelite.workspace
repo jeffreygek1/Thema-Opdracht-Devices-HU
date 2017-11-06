@@ -102,7 +102,7 @@
       <Project Name="EntityObjects" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="LASERTAG" Path="LASERTAG/_codelite.project" Active="No"/>
+  <Project Name="LASERTAG" Path="LASERTAG/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="LASERTAG" ConfigName="Release"/>
