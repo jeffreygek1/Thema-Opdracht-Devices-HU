@@ -18,8 +18,8 @@ private:
     Register_entity & reg;
     HP_entity & hp;
     int state = 0;
-    int playerNumberSize=0;
-    int firePowerSize=0;
+    int playerNumberSize = 0;
+    int firePowerSize = 0;
     rtos::channel< char, 10 > KeyValueChannel;
     rtos::channel<int, 10> MessageChannelPN;
     rtos::channel<int, 10> MessageChannelData;

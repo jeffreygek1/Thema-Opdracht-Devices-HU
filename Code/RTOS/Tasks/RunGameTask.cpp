@@ -7,7 +7,6 @@ Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Co
         oled(oled),
         reg(reg),
         hp(hp),
-//        GameStarted(this, "GameStarted")
         KeyValueChannel(this, "KeyValueChannel"),
         MessageChannelPN(this, "MessageChannelPN"),
         MessageChannelData(this, "MessageChannelData"),
@@ -15,9 +14,7 @@ Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Co
         ReceiveFlag(this, "ReceiverFlag")
 {}
 
-//void Run_Game_Controller::setGameStarted(){
-////    GameStarted.set();
-//}
+
 
 char Run_Game_Controller::getKeyValueChannel(){
     char c = KeyValueChannel.read();

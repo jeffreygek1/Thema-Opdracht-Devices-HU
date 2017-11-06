@@ -1,33 +1,54 @@
-#ifndef KEYPADTASK_HPP
-#define KEYPADTASK_HPP
+#ifndef KEYPADLISTENER_HPP
+#define KEYPADLISTENER_HPP
 
-#include "RunGameTask.hpp"
-#include "bmptk.h"
-#include "hwlib.hpp"
 #include "rtos.hpp"
+#include "Keypad.hpp"
+#include "RunGameTask.hpp"
 
-class KeyPad_Controller: public rtos::task<>
-{
+class keyPadListener : public rtos::task<> {
 private:
-    hwlib::target::pin_in & sw_test;
+    Keypad & keypad1;
     Run_Game_Controller & run_game;
     rtos::timer KeyInputDelayTimer;
-public:
-    KeyPad_Controller( hwlib::target::pin_in & sw_test, Run_Game_Controller & run_game );
-
-
-    void main() {
+    char c;
+    
+    
+public: 
+    keyPadListener(Keypad & keypad1, Run_Game_Controller & run_game);
+    
+    void main() override{
         for(;;){
             KeyInputDelayTimer.set(50'000);
-            if (!sw_test.get() ){
-                run_game.setKeyValueChannel('*');
-                run_game.setKeyPressedFlag();
+            c = keypad1.get();
+            switch(c){
+                case 'A':
+                    run_game.setKeyValueChannel('A');
+                    run_game.setKeyPressedFlag();
+                    break;
+                case 'B':
+                    run_game.setKeyValueChannel('B');
+                    run_game.setKeyPressedFlag();
+                    break;
+                case 'C':
+                    run_game.setKeyValueChannel('C');
+                    run_game.setKeyPressedFlag();
+                    break;
+                case '*':
+                    run_game.setKeyValueChannel('*');
+                    run_game.setKeyPressedFlag();
+                    break;
+                case '#':
+                    run_game.setKeyValueChannel('#');
+                    run_game.setKeyPressedFlag();
+                    break;
+                default:
+                    run_game.setKeyValueChannel(c);
+                    run_game.setKeyPressedFlag();
+                    break;
             }
             wait(KeyInputDelayTimer);
-            
         }
-        
     }
 };
 
-#endif // KEYPADTASK_HPP
+#endif // KEYPADLISTENER_HPP

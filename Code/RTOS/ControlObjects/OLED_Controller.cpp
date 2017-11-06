@@ -4,13 +4,11 @@ OLED_Controller::OLED_Controller(
     hwlib::glcd_oled_buffered & oled, 
     hwlib::window_ostream & cout, 
     hwlib::window_ostream & cout2, 
-//    hwlib::window_ostream & cout3, 
     hwlib::window_ostream & cout4
 ):
     oled(oled),
     cout(cout),
     cout2(cout2),
-//    cout3(cout3),
     cout4(cout4)
 {
     oled.clear();
@@ -48,3 +46,6 @@ void OLED_Controller::printGameOver(){
      flush(); 
 }
 
+void OLED_Controller::printCommand(int value){
+    cout << "\f" << value << "\n";
+}

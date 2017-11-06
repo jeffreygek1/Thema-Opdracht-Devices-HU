@@ -25,8 +25,10 @@
     <File Name="Beeper.hpp"/>
     <File Name="IR_LED.cpp"/>
     <File Name="IR_LED.hpp"/>
-    <File Name="IR_Receiver.hpp"/>
     <File Name="IR_Receiver.cpp"/>
+    <File Name="IR_Receiver.hpp"/>
+    <File Name="Keypad.hpp"/>
+    <File Name="Keypad.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

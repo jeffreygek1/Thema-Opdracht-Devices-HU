@@ -2,38 +2,7 @@
 <Session Name="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace">
   <int Value="0" Name="m_selectedTab"/>
   <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\RunGameTask.cpp" Name="FileName"/>
-      <int Value="54" Name="FirstVisibleLine"/>
-      <int Value="71" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\RunGameTask.hpp" Name="FileName"/>
-      <int Value="72" Name="FirstVisibleLine"/>
-      <int Value="89" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="107"/>
-      </IntVector>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\ControlObjects\OLED_Controller.cpp" Name="FileName"/>
-      <int Value="8" Name="FirstVisibleLine"/>
-      <int Value="41" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\ControlObjects\OLED_Controller.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="27" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-  </TabInfoArray>
+  <TabInfoArray Name="TabInfoArray"/>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

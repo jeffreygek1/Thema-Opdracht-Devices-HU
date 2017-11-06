@@ -5,7 +5,7 @@ IR_Receiver::IR_Receiver(hwlib::target::pin_in & tsop_signal, hwlib::target::pin
     tsop_gnd(tsop_gnd),
     tsop_vdd(tsop_vdd)
     {
-        //hwlib::wait_ms(500);
+        hwlib::wait_ms(100);
         setup();
     }
     
