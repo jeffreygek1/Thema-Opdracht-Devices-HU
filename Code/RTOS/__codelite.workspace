@@ -6,7 +6,7 @@
       <Project Name="01-01-keypad" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="01-02-oled" Path="01-02-oled/_codelite.project" Active="Yes"/>
+  <Project Name="01-02-oled" Path="01-02-oled/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="01-02-oled" ConfigName="Release"/>
