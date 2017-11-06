@@ -48,17 +48,23 @@ public:
         int pn;
         int data;
         oled.printPlayerNumber( reg.getPN() );
-        oled.printHP( hp.getHP() );
+//        oled.printHP( hp.getHP() );
+//        oled.printTime( reg.getDU() );
+        oled.printHP(hp.getHP(), reg.getDU());
+        oled.flush();
         for (;;){
             remainTime = timePassed(timeStamp);
             switch(state){
                 case 0:
+                    if(remainTime <= 0){
+                        hwlib::cout << 'e';
+                    }
                     const rtos::event & evt = wait();
                     if (evt == ReceiveFlag){
-                        hwlib::cout << "received"; 
                         pn = getMessageChannelPN();
                         data = getMessageChannelData();
-                        hwlib::cout << "Received: " << pn << " : " << data << "\n";                        
+                        hwlib::cout << 'r';
+                        hp.setHP( hp.getHP() - data );
                    }else if (evt == KeyPressedFlag){
                         key = getKeyValueChannel();
                         switch(key){
@@ -67,13 +73,18 @@ public:
                                 ir_send.setSendChannel(0);
                                 beeper.setSoundFlag();
                                 beeper.setSoundPool(1);
-                                //oled.printTime( remainTime );
+//                                oled.printHP( hp.getHP() );
+//                                oled.printTime( remainTime );
+//                                oled.flush();
+                                oled.printHP(hp.getHP(), remainTime);
+                                oled.flush();
+                                //hwlib::wait_ms( 50'000 );
                                 break;
                         }
                     }
+                    
                     break;    
                 }
-            //hwlib::wait_ms(500);   
             }
     }
     

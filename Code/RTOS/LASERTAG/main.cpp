@@ -47,12 +47,12 @@ int main( void ){
       hwlib::location( 128, 16));
     auto w2 = hwlib::window_part( 
       oled, 
-      hwlib::location( 0, 16 ),
-      hwlib::location( 128, 32));
-    auto w3 = hwlib::window_part( 
-      oled, 
-      hwlib::location( 0, 32 ),
-      hwlib::location( 128, 48));
+      hwlib::location( 40, 16 ),
+      hwlib::location( 88, 32));
+//    auto w3 = hwlib::window_part( 
+//      oled, 
+//      hwlib::location( 0, 32 ),
+//      hwlib::location( 128, 48));
     
     auto w4 = hwlib::window_part( 
       oled, 
@@ -60,17 +60,19 @@ int main( void ){
       hwlib::location( 128, 64));
       
     auto f = hwlib::font_default_16x16();
+    auto f2 = hwlib::font_default_8x8();
+    
     auto d1 = hwlib::window_ostream( w1, f );
-    auto d2 = hwlib::window_ostream( w2, f );
-    auto d3 = hwlib::window_ostream( w3, f );
+    auto d2 = hwlib::window_ostream( w2, f2 );
+//    auto d3 = hwlib::window_ostream( w3, f );
     auto d4 = hwlib::window_ostream( w4, f );
    
     Beeper beeper(lsp);
     IR_LED ir_led(ir);
     IR_Receiver receiver(tsop_signal, tsop_gnd, tsop_vdd);
-    Register_entity reg(1,1,120);
+    Register_entity reg(1,1,100);
     HP_entity hp(100);
-    auto OLEDController = OLED_Controller(oled, d1, d2, d3, d4);
+    auto OLEDController = OLED_Controller(oled, d1, d2, /*d3, */d4);
     
     auto BeeperTask = Beeper_Controller( beeper );
     auto IRSendTask = IR_Send_Controller(ir_led, reg );

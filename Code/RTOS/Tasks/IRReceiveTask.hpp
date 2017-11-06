@@ -33,24 +33,18 @@ public:
         int checksum;
         for(;;){
             message = get();
-            //hwlib::cout << 'r';
             if (!corrupt && received_messages == 2){
                 
                 playernumber = decode_playernumber(message);
                 data = decode_data(message);
                 checksum = decode_checksum(message);
                 if(checksum){
-                    hwlib::cout<<"PN:"<<decode_playernumber(message)<<"\n";
-                    hwlib::cout<<"Data:"<<decode_data(message)<<"\n";
-                    int pn = decode_playernumber(message);
-                    int data = decode_data(message);
-                    run_game.setMessageChannelPN(pn);
+                    run_game.setMessageChannelPN(playernumber);
                     run_game.setMessageChannelData(data);
                     run_game.setReceiveFlag();
                 }
                 received_messages = 0;
             }
-            //hwlib::wait_us(50);
         }   
    }
     

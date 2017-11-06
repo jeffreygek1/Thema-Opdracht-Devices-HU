@@ -31,9 +31,7 @@ public:
                 wait(SendFlag);
                     signal = encode_signal(getSendChannel());
                     send_signal(signal);
-                    hwlib::cout << "send: " << signal << "\n";
-                    //send_signal(signal);
-                //hwlib::wait_us(100);
+                    send_signal(signal);
             }
         
     }

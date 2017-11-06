@@ -45,7 +45,7 @@ int main( void ){
       << "==============\n";     
       
 //   auto t1 = hwlib::now_us(); 
-//   oled.flush();
+  oled.flush();
 //   auto t2 = hwlib::now_us();
 //   HWLIB_TRACE << "oled.fluhs() took " << t2 - t1 << " us";
 //      

@@ -4,13 +4,13 @@ OLED_Controller::OLED_Controller(
     hwlib::glcd_oled_buffered & oled, 
     hwlib::window_ostream & cout, 
     hwlib::window_ostream & cout2, 
-    hwlib::window_ostream & cout3, 
+//    hwlib::window_ostream & cout3, 
     hwlib::window_ostream & cout4
 ):
     oled(oled),
     cout(cout),
     cout2(cout2),
-    cout3(cout3),
+//    cout3(cout3),
     cout4(cout4)
 {
     oled.clear();
@@ -30,16 +30,18 @@ void OLED_Controller::draw(const hwlib::location & pos){
 }
 
 void OLED_Controller::printPlayerNumber(int value){
-    cout << "\f" << "ID: " << value << "\n";
+    cout << "\f" 
+        << "=ID:" << value << "==" << "\n";
 }
 
-void OLED_Controller::printHP(int value){
-    cout2 << "\f" << "HP: " << value << "\n";
+void OLED_Controller::printHP(int hp, int du){
+    cout2 << "\f" 
+        << "HP:" << hp << "\n"
+        << "T :" << du << "s" << "\n" ;
 }
 
 void OLED_Controller::printTime(int value){
-    cout3 << "\f" << "T:" << value << "s" << "\n";
-    flush();
+//    cout3 << "\f" << "T:" << value << "s" << "\n";
 }
 
 void OLED_Controller::printGameOver(){

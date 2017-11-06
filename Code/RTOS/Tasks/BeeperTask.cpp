@@ -5,7 +5,8 @@ Beeper_Controller::Beeper_Controller(Beeper & beeper):
         beeper(beeper),
         SoundPool("SoundPool"),
         SoundMutex("SoundMutex"),
-        SoundFlag(this, "SoundFlag")
+        SoundFlag(this, "SoundFlag"),
+        SoundTimer(this, "SoundTimer")
     {}
 
 void Beeper_Controller::setSoundPool(int value){
@@ -50,8 +51,9 @@ void Beeper_Controller::gameOverSound(){
 
 void Beeper_Controller::hitSound(){
     for( int i = 0; i < 2; i++ ){
+       SoundTimer.set(20'000);
        beeper.beep( 1000, 50000 );
-       hwlib::wait_us( 20'000 );
+       wait(SoundTimer);
    }
 }
 

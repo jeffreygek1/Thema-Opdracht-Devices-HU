@@ -12,6 +12,7 @@ private:
     rtos::pool<int> SoundPool;
     rtos::mutex SoundMutex;
     rtos::flag SoundFlag;
+    rtos::timer SoundTimer;
 public: 
     Beeper_Controller(Beeper & beeper);
     
@@ -48,7 +49,6 @@ public:
                 default:
                     break;
             }
-            //hwlib::wait_us(500);
 
             
         }
