@@ -14,6 +14,7 @@ void IR_Send_Controller::send_signal( int signal )
     {
         if (signal & 0x8000)
         {
+            
             ir_led.set(1);
             hwlib::wait_us(1600);
             ir_led.set(0);
