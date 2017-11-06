@@ -6,11 +6,7 @@
 #include "OLED_Controller.hpp"
 #include "KeyPadTask_init.hpp"
 #include "InitTask.hpp"
-<<<<<<< HEAD
 #include "Register_entity.hpp"
-=======
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
-
 int main( void ){	
     
     // kill the watchdog
@@ -51,22 +47,12 @@ int main( void ){
     auto d4 = hwlib::window_ostream( w1, f );
    
     IR_LED ir_led(ir);
-<<<<<<< HEAD
     Register_entity reg(0,0,0);
     auto OLEDController = OLED_Controller(oled, d1, d2, d4);
     
     auto IRSendTask = IR_Send_Controller(ir_led, reg );
     auto InitTask = Init_Game_Controller(IRSendTask, OLEDController);
     auto KeyPadTask = KeyPad_Init_Controller(sw_test, InitTask);
-=======
-    Register_entity reg(1,1,100);
-    HP_entity hp(100);
-    auto OLEDController = OLED_Controller(oled, d1, d2, d4);
-    auto IRSendTask = IR_Send_Controller(ir_led, reg );
-    
-    auto InitTask = Init_Game_Controller(IRSendTask, OLEDController);
-    auto KeyPadTask = KeyPad_Controller(sw_test, InitTask);
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
    
     hwlib::wait_ms(500);
     (void) IRSendTask;
