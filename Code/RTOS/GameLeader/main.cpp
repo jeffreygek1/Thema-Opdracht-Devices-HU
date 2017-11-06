@@ -53,6 +53,13 @@ int main( void ){
     auto IRSendTask = IR_Send_Controller(ir_led, reg );
     auto InitTask = Init_Game_Controller(IRSendTask, OLEDController);
     auto KeyPadTask = KeyPad_Init_Controller(sw_test, InitTask);
+    Register_entity reg(1,1,100);
+    HP_entity hp(100);
+    auto OLEDController = OLED_Controller(oled, d1, d2, d4);
+    auto IRSendTask = IR_Send_Controller(ir_led, reg );
+    
+    auto InitTask = Init_Game_Controller(IRSendTask, OLEDController);
+    auto KeyPadTask = KeyPad_Controller(sw_test, InitTask);
    
     hwlib::wait_ms(500);
     (void) IRSendTask;

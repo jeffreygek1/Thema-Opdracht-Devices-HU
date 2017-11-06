@@ -12,11 +12,7 @@ private:
     IR_Send_Controller & ir_send;
     OLED_Controller & oled;
     int state = 0;
-<<<<<<< HEAD
     int command, key_int;
-=======
-    int command;
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
 //    rtos::flag GameStartedFlag;
     rtos::channel< char, 10 > KeyValueChannel;
     rtos::flag KeyPressedFlag;
@@ -50,11 +46,7 @@ public:
                                 for(;;){
                                     //ir_send.setSendFlag();
                                     //ir_send.setSendChannel(command);
-<<<<<<< HEAD
                                     wait(KeyPressedFlag);
-=======
-                                    wait(getKeyValueChannel());
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
                                     key = getKeyValueChannel();
                                     if( key == '*'){
                                         oled.printCommand(0);
@@ -63,11 +55,7 @@ public:
                                             wait(KeyPressedFlag);
                                             key = getKeyValueChannel();
                                             if(key == '*'){
-<<<<<<< HEAD
                                                 oled.printCommand(0);
-=======
-                                                oled.printCommand(0)
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
                                                 oled.flush();
                                             }
                                         }
@@ -81,23 +69,13 @@ public:
                         }
                     }
                     else if (key >= '0' && key <= '9'){
-<<<<<<< HEAD
                         key_int = KeyToInt(key);
-=======
-                        key_int = KeyToInt;
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
                         command = command * 10 + key_int;
                     }
                 }
             }
         }
-<<<<<<< HEAD
     }
-
-   
-=======
-    };   
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
 };
 
 

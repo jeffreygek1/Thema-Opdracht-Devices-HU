@@ -7,10 +7,6 @@ Init_Game_Controller::Init_Game_Controller( IR_Send_Controller & ir_send, OLED_C
 //        GameStarted(this, "GameStarted")
         KeyValueChannel(this, "KeyValueChannel"),
         KeyPressedFlag(this, "KeyPressedFlag")
-<<<<<<< HEAD
-=======
-
->>>>>>> 278e1268952af882dbe5fd3f63f1412ac2be92de
 {}
 
 //void Run_Game_Controller::setGameStarted(){
