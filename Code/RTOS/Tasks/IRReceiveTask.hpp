@@ -28,24 +28,25 @@ public:
     bool checksum(int playernumber, int data, int checksum);
     
     void main() override{
-//        int playernumber;
-//        int data;
+        int playernumber;
+        int data;
         int checksum;
         for(;;){
             message = get();
+            //hwlib::cout << 'r';
             if (!corrupt && received_messages == 2){
                 
-//                playernumber = decode_playernumber(message);
-//                data = decode_data(message);
+                playernumber = decode_playernumber(message);
+                data = decode_data(message);
                 checksum = decode_checksum(message);
                 if(checksum){
-//                    hwlib::cout<<"PN:"<<decode_playernumber(message)<<"\n";
-//                    hwlib::cout<<"Data:"<<decode_data(message)<<"\n";
-//                    int pn = decode_playernumber(message);
-//                    int data = decode_data(message);
-//                    run_game.setMessageChannelPN(pn);
-//                    run_game.setMessageChannelData(data);
-//                    run_game.setReceiveFlag();
+                    hwlib::cout<<"PN:"<<decode_playernumber(message)<<"\n";
+                    hwlib::cout<<"Data:"<<decode_data(message)<<"\n";
+                    int pn = decode_playernumber(message);
+                    int data = decode_data(message);
+                    run_game.setMessageChannelPN(pn);
+                    run_game.setMessageChannelData(data);
+                    run_game.setReceiveFlag();
                 }
                 received_messages = 0;
             }

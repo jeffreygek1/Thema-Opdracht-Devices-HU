@@ -45,8 +45,8 @@ public:
         int remainTime;
         int timeStamp = hwlib::now_us();
         char key;
-//        int pn;
-//        int data;
+        int pn;
+        int data;
         oled.printPlayerNumber( reg.getPN() );
         oled.printHP( hp.getHP() );
         for (;;){
@@ -54,13 +54,12 @@ public:
             switch(state){
                 case 0:
                     const rtos::event & evt = wait();
-//                    if (evt == ReceiveFlag){
-////                        hwlib::cout << "received"; 
-////                        pn = getMessageChannelPN();
-////                        data = getMessageChannelData();
-////                        hwlib::cout << "Received: " << pn << " : " << data << "\n";
-//                        
-                   /*}else*/ if (evt == KeyPressedFlag){
+                    if (evt == ReceiveFlag){
+                        hwlib::cout << "received"; 
+                        pn = getMessageChannelPN();
+                        data = getMessageChannelData();
+                        hwlib::cout << "Received: " << pn << " : " << data << "\n";                        
+                   }else if (evt == KeyPressedFlag){
                         key = getKeyValueChannel();
                         switch(key){
                             case '*':
