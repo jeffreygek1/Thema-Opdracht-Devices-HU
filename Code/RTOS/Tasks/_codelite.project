@@ -23,18 +23,14 @@
     <File Name="main.cpp"/>
     <File Name="BeeperTask.cpp"/>
     <File Name="BeeperTask.hpp"/>
-    <File Name="IRReceiveTask.cpp"/>
-    <File Name="IRReceiveTask.hpp"/>
     <File Name="IRSendTask.cpp"/>
     <File Name="IRSendTask.hpp"/>
-    <File Name="KeyPadTask.cpp"/>
-    <File Name="KeyPadTask.hpp"/>
-    <File Name="OLEDTask.cpp"/>
-    <File Name="OLEDTask.hpp"/>
     <File Name="RunGameTask.cpp"/>
     <File Name="RunGameTask.hpp"/>
-    <File Name="InitTask.hpp"/>
-    <File Name="InitTask.cpp"/>
+    <File Name="KeyPadTask.hpp"/>
+    <File Name="KeyPadTask.cpp"/>
+    <File Name="IRReceiveTask.hpp"/>
+    <File Name="IRReceiveTask.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

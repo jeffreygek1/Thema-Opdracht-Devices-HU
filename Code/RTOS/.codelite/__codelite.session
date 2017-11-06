@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\RTOS\LASERTAG\main.cpp" Name="FileName"/>
-      <int Value="44" Name="FirstVisibleLine"/>
+      <int Value="57" Name="FirstVisibleLine"/>
       <int Value="86" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\RunGameTask.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\jeffr\Dropbox\School\Jaar 2\Thema Devices\github\Thema-Opdracht-Devices-HU\Code\RTOS\ControlObjects\OLED_Controller.cpp" Name="FileName"/>
+      <int Value="5" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
