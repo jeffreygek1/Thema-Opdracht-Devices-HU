@@ -25,7 +25,7 @@ public:
     
     int decode_checksum(int message); 
     
-    bool checksum(int playernumber, int data, int checksum);
+    bool check_checksum(int playernumber, int data, int checksum);
     
     void main() override{
         int playernumber;
@@ -38,9 +38,10 @@ public:
                 playernumber = decode_playernumber(message);
                 data = decode_data(message);
                 checksum = decode_checksum(message);
-                if(checksum){
+                if(check_checksum(playernumber,data,checksum)){
                     run_game.setMessageChannelPN(playernumber);
                     run_game.setMessageChannelData(data);
+                    //hwlib::cout << 'r';
                     run_game.setReceiveFlag();
                 }
                 received_messages = 0;

@@ -52,75 +52,79 @@ public:
         int pn;
         int data;
         bool hasBeenInit = false;
-        char playerNumber[4];
-        char firePower[4];
+    char playerNumber[4] = {' ', ' ', ' ', '\0'};
+        char firePower[4] = {' ', ' ', ' ', '\0'};
+        int i = 1;
         for (;;){
-            remainTime = timePassed(timeStamp);
             switch(state){
                 case 0:
                     wait(KeyPressedFlag);
                         key = getKeyValueChannel();
                         if (key == 'A'){
                             oled.printIndicator('A');
+                            oled.printPlayerNumberSetup();
                             oled.flush();
-                            while(true){
-                                wait(KeyPressedFlag);
-                                    key = getKeyValueChannel();
-                                    while( key != 'B' && arrayIsEmpty(playerNumberSize) ){
+                            
+                            while(i == 1){
+                                    while( key != 'B' ){
                                         wait(KeyPressedFlag);
                                         key = getKeyValueChannel();
-                                            if (key >= '0' && key <= '9' && charArrayToInt(playerNumber, playerNumberSize) < 32 ){
+                                            if (key >= '0' && key <= '9'){
                                                 playerNumber[playerNumberSize++] = key;
-                                                if(playerNumberSize > 1){
-                                                    oled.printIndicator(playerNumber[0], playerNumber[1]);
-                                                    oled.flush();
-                                                }else{
-                                                    oled.printIndicator(playerNumber[0]);
-                                                    oled.flush();
-                                                }
+                                                oled.printIndicator(playerNumber[0], playerNumber[1]);
+                                                oled.flush();
                                             }else{
-                                                clearArray(playerNumber, playerNumberSize);
-                                                playerNumberSize = 0;
+//                                                clearArray(playerNumber, playerNumberSize);
+//                                                playerNumberSize = 0;
                                             }
+                                        
                                     }
                                 reg.setPN(charArrayToInt(playerNumber, playerNumberSize));
-                                wait(KeyPressedFlag);
-                                    key = getKeyValueChannel();
-                                    while( key != 'B' && arrayIsEmpty(firePowerSize) ){
+                                hwlib::cout << "pn: " << reg.getPN(); 
+                                oled.printFirePowerSetup();
+                                oled.flush();
+                                key = ' ';
+                                    while( key != 'B' ){
                                         wait(KeyPressedFlag);
                                         key = getKeyValueChannel();
-                                            if (key >= '0' && key <= '9' && charArrayToInt(firePower, firePowerSize) < 32 ){
+                                            if (key >= '0' && key <= '9'){
                                                 firePower[firePowerSize++] = key;
-                                                if(playerNumberSize > 1){
-                                                    oled.printIndicator(firePower[0], firePower[1]);
-                                                    oled.flush();
-                                                }else{
-                                                    oled.printIndicator(firePower[0]);
-                                                    oled.flush();
-                                                }
+                                                oled.printIndicator(firePower[0], firePower[1]);
+                                                oled.flush();
                                             }else{
-                                                clearArray(firePower, firePowerSize);
-                                                firePowerSize = 0;
+//                                                clearArray(firePower, firePowerSize);
+//                                                firePowerSize = 0;
                                             }
                                     }
                                 reg.setFP(charArrayToInt(firePower, firePowerSize));
-                                wait(ReceiveFlag);
-                                    pn = getMessageChannelPN();
-                                    data = getMessageChannelData();
-                                    while(pn != 0 && data == 0){
+                                hwlib::cout << "fp: " << reg.getFP();
+                                
+                                hwlib::cout << "waiting for gameleader";
+                                    while(pn != 0){
                                         wait(ReceiveFlag);
-                                        pn = getMessageChannelPN();
                                         data = getMessageChannelData();
+                                        pn = getMessageChannelPN();
                                     }
                                 reg.setDU(data*60);
-                                while(pn != 0 && data != 0){}
+                                hwlib::cout << "du: " << reg.getDU();
+                                
+                                pn = 10;
+                                data = 10;
+                                
+                                while(pn != 0 && data != 0){
+                                    wait(ReceiveFlag);
+                                    pn = getMessageChannelPN();
+                                    data = getMessageChannelData();
+                                }
                                 state = 1;
-                                break;
+                                hwlib::cout << "Game started";
+                                i = 0;
                             }
                         }    
                     break;
                 
                 case 1:
+                remainTime = timePassed(timeStamp);
                     if ( hasBeenInit == false ){
                         oled.printPlayerNumber( reg.getPN() );
                         oled.printHP_DU(hp.getHP(), reg.getDU());
@@ -135,16 +139,16 @@ public:
                     if (evt_rungame == ReceiveFlag){
                         pn = getMessageChannelPN();
                         data = getMessageChannelData();
-                        hwlib::cout << 'r';
                         hp.setHP( hp.getHP() - data );
                     }else if (evt_rungame == KeyPressedFlag){
                         key = getKeyValueChannel();
                         switch(key){
                             case '*':
-                                ir_send.setSendFlag();
                                 ir_send.setSendChannel(0);
-                                beeper.setSoundFlag();
+                                ir_send.setSendFlag();
+                                hwlib::wait_ms(100);
                                 beeper.setSoundPool(1);
+                                beeper.setSoundFlag();
                                 oled.printHP_DU(hp.getHP(), remainTime);
                                 oled.flush();
                                 break;

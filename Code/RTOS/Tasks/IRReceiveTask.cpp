@@ -93,7 +93,7 @@ int IR_Receiver_Controller::decode_checksum(int message){
         return message;
     }
     
-bool IR_Receiver_Controller::checksum(int playernumber, int data, int checksum){
+bool IR_Receiver_Controller::check_checksum(int playernumber, int data, int checksum){
         return (checksum == (playernumber^data));
     }
 

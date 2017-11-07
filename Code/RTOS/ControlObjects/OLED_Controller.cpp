@@ -28,12 +28,14 @@ void OLED_Controller::draw(const hwlib::location & pos){
 }
 
 void OLED_Controller::printPlayerNumber(int value){
-    cout << "\f" 
+    cout 
+        << "\f" 
         << "=ID:" << value << "==" << "\n";
 }
 
 void OLED_Controller::printHP_DU(int hp, int du){
-    cout2 << "\f" 
+    cout2 
+        << "\f" 
         << "HP:" << hp << "\n"
         << "T :" << du << "s" << "\n" ;
 }
@@ -46,8 +48,28 @@ void OLED_Controller::printGameOver(){
      flush(); 
 }
 
+void OLED_Controller::printPlayerNumberSetup(){
+    cout 
+        << "\f" 
+        << "PN" << "\n"; 
+}
+
+void OLED_Controller::printFirePowerSetup(){
+    cout 
+        << "\f" 
+        << "FP" << "\n"; 
+}
+
+void OLED_Controller::printWaitingForCommand(){
+    cout4
+        << "========\n"
+        << "Waiting.\n"
+        << "========\n";
+}
+
 void OLED_Controller::printCommand(int value){
-    cout << "\f" << value << "\n";
+    cout 
+        << "\f" << value << "\n";
 }
 
 void OLED_Controller::printIndicator(char value, char value2 ){

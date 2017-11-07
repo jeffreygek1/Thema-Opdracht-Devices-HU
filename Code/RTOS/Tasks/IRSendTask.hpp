@@ -30,8 +30,12 @@ public:
         for(;;){
                 wait(SendFlag);
                     signal = encode_signal(getSendChannel());
+                    //hwlib::cout << signal;
                     send_signal(signal);
+                    //hwlib::wait_us(50);
                     send_signal(signal);
+                    //hwlib::cout << signal << "\n";
+                //hwlib::wait_ms(1);
             }
         
     }
