@@ -27,6 +27,7 @@ public:
     void printPlayerNumber(int value);
     void printHP_DU( int hp, int du );
     void printGameOver();
+    void printstartInit();
     void printPlayerNumberSetup();
     void printFirePowerSetup();
     void printWaitingForCommand();

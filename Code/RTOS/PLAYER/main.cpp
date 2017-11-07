@@ -78,7 +78,7 @@ int main( void ){
     Beeper beeper(lsp);
     IR_LED ir_led(ir);
     IR_Receiver receiver(tsop_signal, tsop_gnd, tsop_vdd);
-    Register_entity reg(1,1,100);
+    Register_entity reg(1,1,300);
     HP_entity hp(100);
     
     auto OLEDController = OLED_Controller(oled, d1, d2, d4);

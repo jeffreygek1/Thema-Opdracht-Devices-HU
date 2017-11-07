@@ -1,3 +1,5 @@
+/// \file Beeper.cpp
+
 #include "Beeper.hpp"
 
 Beeper::Beeper( hwlib::pin_out & lsp ):

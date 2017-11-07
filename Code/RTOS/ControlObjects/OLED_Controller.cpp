@@ -41,11 +41,18 @@ void OLED_Controller::printHP_DU(int hp, int du){
 }
 
 void OLED_Controller::printGameOver(){
-    cout4 
+    cout4 << "\f"
       << "========\n"
       << "GameOver\n"
       << "========\n";  
      flush(); 
+}
+
+void OLED_Controller::printstartInit(){
+    cout4 << "\f" 
+        << "Press\n"
+        << "A to\n"
+        << "Start\n";
 }
 
 void OLED_Controller::printPlayerNumberSetup(){
@@ -61,10 +68,10 @@ void OLED_Controller::printFirePowerSetup(){
 }
 
 void OLED_Controller::printWaitingForCommand(){
-    cout4
-        << "========\n"
-        << "Waiting.\n"
-        << "========\n";
+    cout4 << "\f" 
+        << "Waiting\n"
+        << "For\n"
+        << "Leader\n";
 }
 
 void OLED_Controller::printCommand(int value){

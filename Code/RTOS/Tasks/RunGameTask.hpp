@@ -17,7 +17,7 @@ private:
     OLED_Controller & oled;
     Register_entity & reg;
     HP_entity & hp;
-    int state = 0;
+    int state = 1;
     int playerNumberSize = 0;
     int firePowerSize = 0;
     rtos::channel< char, 10 > KeyValueChannel;
@@ -58,10 +58,13 @@ public:
         for (;;){
             switch(state){
                 case 0:
+                    oled.printstartInit();
+                    oled.flush();
                     wait(KeyPressedFlag);
                         key = getKeyValueChannel();
                         if (key == 'A'){
-                            oled.printIndicator('A');
+                            oled.clear();
+                            oled.printIndicator(' ');
                             oled.printPlayerNumberSetup();
                             oled.flush();
                             
@@ -73,15 +76,12 @@ public:
                                                 playerNumber[playerNumberSize++] = key;
                                                 oled.printIndicator(playerNumber[0], playerNumber[1]);
                                                 oled.flush();
-                                            }else{
-//                                                clearArray(playerNumber, playerNumberSize);
-//                                                playerNumberSize = 0;
-                                            }
+                                            }else{}
                                         
                                     }
                                 reg.setPN(charArrayToInt(playerNumber, playerNumberSize));
-                                hwlib::cout << "pn: " << reg.getPN(); 
                                 oled.printFirePowerSetup();
+                                oled.printIndicator(' ');
                                 oled.flush();
                                 key = ' ';
                                     while( key != 'B' ){
@@ -91,40 +91,38 @@ public:
                                                 firePower[firePowerSize++] = key;
                                                 oled.printIndicator(firePower[0], firePower[1]);
                                                 oled.flush();
-                                            }else{
-//                                                clearArray(firePower, firePowerSize);
-//                                                firePowerSize = 0;
-                                            }
+                                            }else{}
                                     }
                                 reg.setFP(charArrayToInt(firePower, firePowerSize));
-                                hwlib::cout << "fp: " << reg.getFP();
-                                
-                                hwlib::cout << "waiting for gameleader";
+                                 oled.clear();
+                                oled.printWaitingForCommand();
+                                oled.flush();
                                     while(pn != 0){
                                         wait(ReceiveFlag);
                                         data = getMessageChannelData();
                                         pn = getMessageChannelPN();
                                     }
                                 reg.setDU(data*60);
-                                hwlib::cout << "du: " << reg.getDU();
-                                
                                 pn = 10;
                                 data = 10;
-                                
+                                oled.clear();
+                                oled.printWaitingForCommand();
+                                oled.flush();
                                 while(pn != 0 && data != 0){
                                     wait(ReceiveFlag);
                                     pn = getMessageChannelPN();
                                     data = getMessageChannelData();
                                 }
+                                oled.clear();
                                 state = 1;
-                                hwlib::cout << "Game started";
                                 i = 0;
+                                
                             }
                         }    
                     break;
                 
                 case 1:
-                remainTime = timePassed(timeStamp);
+                    remainTime = timePassed(timeStamp);
                     if ( hasBeenInit == false ){
                         oled.printPlayerNumber( reg.getPN() );
                         oled.printHP_DU(hp.getHP(), reg.getDU());
@@ -132,31 +130,35 @@ public:
                         hasBeenInit = true;
                     }
                     
-                    if(remainTime <= 0){
-                        hwlib::cout << 'e';
-                    }
-                    const rtos::event & evt_rungame = wait();
-                    if (evt_rungame == ReceiveFlag){
-                        pn = getMessageChannelPN();
-                        data = getMessageChannelData();
-                        hp.setHP( hp.getHP() - data );
-                    }else if (evt_rungame == KeyPressedFlag){
-                        key = getKeyValueChannel();
-                        switch(key){
-                            case '*':
-                                ir_send.setSendChannel(0);
-                                ir_send.setSendFlag();
-                                hwlib::wait_ms(100);
-                                beeper.setSoundPool(1);
-                                beeper.setSoundFlag();
-                                oled.printHP_DU(hp.getHP(), remainTime);
-                                oled.flush();
-                                break;
+                    if(remainTime <= 0 || hp.getHP() <= 0){
+                        oled.clear();
+                        oled.printGameOver();
+                        oled.flush();
+                        while(1==1){}
+                    }else{
+                        const rtos::event & evt_rungame = wait();
+                        if (evt_rungame == ReceiveFlag){
+                            pn = getMessageChannelPN();
+                            data = getMessageChannelData();
+                            hp.setHP( hp.getHP() - data );
+                            oled.printHP_DU(hp.getHP(), remainTime);
+                            oled.flush();
+                        }else if (evt_rungame == KeyPressedFlag){
+                            key = getKeyValueChannel();
+                            
+                            switch(key){
+                                case '*':
+                                    ir_send.setSendChannel(0);
+                                    ir_send.setSendFlag();
+                                    hwlib::wait_ms(100);
+                                    beeper.setSoundPool(1);
+                                    beeper.setSoundFlag();
+                                    break;
+                            }
+                            
                         }
                     }
-                    break;    
-                
-                
+                    break; 
                 }
             }
     }

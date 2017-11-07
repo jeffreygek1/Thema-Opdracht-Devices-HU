@@ -41,7 +41,6 @@ public:
                 if(check_checksum(playernumber,data,checksum)){
                     run_game.setMessageChannelPN(playernumber);
                     run_game.setMessageChannelData(data);
-                    //hwlib::cout << 'r';
                     run_game.setReceiveFlag();
                 }
                 received_messages = 0;

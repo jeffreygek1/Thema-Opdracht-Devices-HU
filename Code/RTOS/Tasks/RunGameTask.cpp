@@ -74,3 +74,5 @@ void Run_Game_Controller::clearArray(char arr[3], int len){
         arr[i] = '0';
     }
 }
+
+
