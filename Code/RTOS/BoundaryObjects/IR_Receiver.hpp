@@ -6,11 +6,11 @@
 class IR_Receiver
 {
 private:
-    hwlib::target::pin_in   & tsop_signal;
-    hwlib::target::pin_out  & tsop_gnd;
-    hwlib::target::pin_out  & tsop_vdd;
+    hwlib::target::pin_in   & tsopSignal;
+    hwlib::target::pin_out  & tsopGnd;
+    hwlib::target::pin_out  & tsopVdd;
 public:
-    IR_Receiver(hwlib::target::pin_in & tsop_signal , hwlib::target::pin_out & tsop_gnd, hwlib::target::pin_out & tsop_vdd);
+    IR_Receiver(hwlib::target::pin_in & tsopSignal , hwlib::target::pin_out & tsopGnd, hwlib::target::pin_out & tsopVdd);
     
     void setup();    
     bool get();

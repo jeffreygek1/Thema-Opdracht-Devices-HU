@@ -4,11 +4,11 @@ IR_Send_Controller::IR_Send_Controller(IR_LED & ir_led, Register_entity & reg):
     task(1, "IRSendTask"),
     ir_led(ir_led),
     reg(reg),
-    SendChannel( this, "SendChannel" ),
-    SendFlag(this, "SendFlag")
+    sendChannel( this, "SendChannel" ),
+    sendFlag(this, "SendFlag")
 {}
 
-void IR_Send_Controller::send_signal( int signal )
+void IR_Send_Controller::sendSignal( int signal )
 {
     for (int bitsSend=0; bitsSend<16; ++bitsSend)
     {
@@ -32,24 +32,24 @@ void IR_Send_Controller::send_signal( int signal )
     }
 }
 
-int IR_Send_Controller::encode_signal(int Message)
+int IR_Send_Controller::encodeSignal(int message)
 {
     if(reg.getPN() != 0){
-        Message = reg.getFP();
+        message = reg.getFP();
     }
-    int checksum = (reg.getPN()^Message);
-    return ((1<<15)|(reg.getPN()<<10)|(Message<<5)|checksum);
+    int checksum = (reg.getPN()^message);
+    return ((1<<15)|(reg.getPN()<<10)|(message<<5)|checksum);
 }
 
 void IR_Send_Controller::setSendChannel(int value){
-    SendChannel.write(value);
+    sendChannel.write(value);
 }
 
 int IR_Send_Controller::getSendChannel(){
-    int value = SendChannel.read();
+    int value = sendChannel.read();
     return value;
 }
 
 void IR_Send_Controller::setSendFlag(){
-    SendFlag.set();
+    sendFlag.set();
 }

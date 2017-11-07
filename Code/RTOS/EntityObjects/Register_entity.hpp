@@ -4,17 +4,17 @@
 class Register_entity
 {
 private:
-    int Player_number = 0;
-    int Firepower = 0;
-    int Duration = 0;
+    int playerNumber = 0;
+    int firepower = 0;
+    int duration = 0;
 public:
-    Register_entity(int Player_number, int Firepower, int Duration);
+    Register_entity(int playerNumber, int firepower, int duration);
     int getFP();
     int getPN();
     int getDU();
-    void setFP(int Firepower);
-    void setPN(int Player_number);
-    void setDU(int Duration);
+    void setFP(int firepowerValue);
+    void setPN(int playerNumberValue);
+    void setDU(int duration);
     
 
 };

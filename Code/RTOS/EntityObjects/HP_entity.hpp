@@ -4,9 +4,9 @@
 class HP_entity
 {
 private:
-    int Hitpoints;
+    int hitpoints;
 public:
-    HP_entity(int Hitpoints);
+    HP_entity(int hitpoints);
     int getHP();
     void setHP(int Value);
 

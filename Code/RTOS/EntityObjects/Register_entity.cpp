@@ -1,29 +1,29 @@
 #include "Register_entity.hpp"
 
-Register_entity::Register_entity(int Player_number, int Firepower, int Duration)
-    : Player_number(Player_number), Firepower(Firepower), Duration(Duration){}
+Register_entity::Register_entity(int playerNumber, int firepower, int duration)
+    : playerNumber(playerNumber), firepower(firepower), duration(duration){}
 
 int Register_entity::getFP(){
-    return Firepower;
+    return firepower;
 }
 
 int Register_entity::getPN(){
-    return Player_number;
+    return playerNumber;
 }
 
 int Register_entity::getDU(){
-    return Duration;
+    return duration;
 }
 
-void Register_entity::setFP(int Firepower_value){
-    Firepower = Firepower_value;
+void Register_entity::setFP(int firepowerValue){
+    firepower = firepowerValue;
 }
 
-void Register_entity::setPN(int Player_number_value){
-    Player_number = Player_number_value;
+void Register_entity::setPN(int playerNumberValue){
+    playerNumber = playerNumberValue;
 }
 
-void Register_entity::setDU(int Duration_value){
-    Duration = Duration_value;
+void Register_entity::setDU(int DurationValue){
+    duration = DurationValue;
 }
 

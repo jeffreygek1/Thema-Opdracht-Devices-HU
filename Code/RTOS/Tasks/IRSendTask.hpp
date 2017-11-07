@@ -12,16 +12,16 @@ class IR_Send_Controller : public rtos::task<>
 private:
 	IR_LED & ir_led;
     Register_entity & reg;
-    rtos::channel< int, 10 > SendChannel;
-    rtos::flag SendFlag;
-    int Message;
+    rtos::channel< int, 10 > sendChannel;
+    rtos::flag sendFlag;
+    int message;
     int checksum;
     int send;
     int signal;
 public:
     IR_Send_Controller(IR_LED & ir_led, Register_entity & reg);
-    void send_signal(int signal);
-    int encode_signal(int Message);
+    void sendSignal(int signal);
+    int encodeSignal(int message);
     
     void setSendChannel(int value);
     int getSendChannel();
@@ -29,11 +29,11 @@ public:
     
     void main() override{
         for(;;){
-            wait(SendFlag);
-            signal = encode_signal(getSendChannel());
+            wait(sendFlag);
+            signal = encodeSignal(getSendChannel());
             //hwlib::cout << signal;
             for(send = 0; send < 2; send++){
-                send_signal(signal);
+                sendSignal(signal);
             }
         }
     }

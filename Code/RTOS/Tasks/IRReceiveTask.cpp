@@ -9,7 +9,7 @@ IR_Receiver_Controller::IR_Receiver_Controller( IR_Receiver & receiver, Run_Game
 int IR_Receiver_Controller::get(){
         corrupt = 0;
         message = 0;
-        bool last_message = 0;
+        bool lastMessage = 0;
         for(int i = 0; i < 16; i++){
             
             auto times = hwlib::now_us();
@@ -30,41 +30,41 @@ int IR_Receiver_Controller::get(){
             
             
             if(time>700 && time<900){
-                if(received_messages == 1 && (hwlib::now_us()-last_message_time)<=4000){
-                    last_message = 1;
+                if(receivedMessages == 1 && (hwlib::now_us()-lastMessageTime)<=4000){
+                    lastMessage = 1;
                 }
                 message = message | 0;
                 if( i!=15){
                     message = message << 1;
                 }
                 else{
-                    if(last_message){
-                        received_messages++;
+                    if(lastMessage){
+                        receivedMessages++;
                     }
                     else{
-                        received_messages = 1;
+                        receivedMessages = 1;
                     }
-                    last_message_time = hwlib::now_us();
+                    lastMessageTime = hwlib::now_us();
                 }
             }
             
             else if(time>1500 && time<1700){
-                if(received_messages == 1 && (hwlib::now_us()-last_message_time)<=4000){
-                    last_message = 1;
+                if(receivedMessages == 1 && (hwlib::now_us()-lastMessageTime)<=4000){
+                    lastMessage = 1;
                 }
                 message = message | 1;
                 if( i!=15){
                     message = message << 1;
                 }
                 else{
-                    if(last_message){
-                        received_messages++;
+                    if(lastMessage){
+                        receivedMessages++;
                     }
                     else{
-                        received_messages = 1;
+                        receivedMessages = 1;
                         
                     }
-                    last_message_time = hwlib::now_us();
+                    lastMessageTime = hwlib::now_us();
                 }
             }
             
@@ -76,25 +76,25 @@ int IR_Receiver_Controller::get(){
         return message;
     }
     
-int IR_Receiver_Controller::decode_playernumber(int message){
+int IR_Receiver_Controller::decodePlayerNumber(int message){
         message = message & 31744;
         message = message >> 10;
         return message;
     }
     
-int IR_Receiver_Controller::decode_data(int message){
+int IR_Receiver_Controller::decodeData(int message){
         message = message & 992;
         message = message >> 5;
         return message;
     }
     
-int IR_Receiver_Controller::decode_checksum(int message){
+int IR_Receiver_Controller::decodeChecksum(int message){
         message = message & 31;
         return message;
     }
     
-bool IR_Receiver_Controller::checksum(int playernumber, int data, int checksum){
-        return (checksum == (playernumber^data));
+bool IR_Receiver_Controller::checkChecksum(int playerNumber, int data, int checksum){
+        return (checksum == (playerNumber^data));
     }
 
 

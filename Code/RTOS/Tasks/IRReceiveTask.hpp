@@ -11,39 +11,39 @@ class IR_Receiver_Controller : public rtos::task<>{
 private:
     IR_Receiver & receiver;
     Run_Game_Controller & run_game;
-    int corrupt = 0, message = 0, received_messages = 0;
-    long long int last_message_time;
+    int corrupt = 0, message = 0, receivedMessages = 0;
+    long long int lastMessageTime;
+    int playerNumber;
+    int data;
+    int checksum;
 
 public:
     IR_Receiver_Controller( IR_Receiver & receiver, Run_Game_Controller & run_game );
     
     int get();
     
-    int decode_playernumber(int message);
+    int decodePlayerNumber(int message);
     
-    int decode_data(int message); 
+    int decodeData(int message); 
     
-    int decode_checksum(int message); 
+    int decodeChecksum(int message); 
     
-    bool checksum(int playernumber, int data, int checksum);
+    bool checkChecksum(int playerNumber, int data, int checksum);
     
     void main() override{
-        int playernumber;
-        int data;
-        int checksum;
         for(;;){
             message = get();
-            if (!corrupt && received_messages == 2){
+            if (!corrupt && receivedMessages == 2){
                 
-                playernumber = decode_playernumber(message);
-                data = decode_data(message);
-                checksum = decode_checksum(message);
-                if(checksum){
-                    run_game.setMessageChannelPN(playernumber);
+                playerNumber = decodePlayerNumber(message);
+                data = decodeData(message);
+                checksum = decodeChecksum(message);
+                if(checkChecksum(playerNumber, data, checksum)){
+                    run_game.setMessageChannelPN(playerNumber);
                     run_game.setMessageChannelData(data);
                     run_game.setReceiveFlag();
                 }
-                received_messages = 0;
+                receivedMessages = 0;
             }
         }   
    }

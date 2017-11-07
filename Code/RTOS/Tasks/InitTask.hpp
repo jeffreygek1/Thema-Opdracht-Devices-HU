@@ -13,31 +13,30 @@ private:
     OLED_Controller & oled;
     int state = 0;
     int Command, key_int;
-    rtos::channel< char, 10 > KeyValueChannel;
-    rtos::flag KeyPressedFlag;
+    char key;
+    rtos::channel< char, 10 > keyValueChannel;
+    rtos::flag keyPressedFlag;
 public: 
     Init_Game_Controller( IR_Send_Controller & ir_send, OLED_Controller & oled);
     
     char getKeyValueChannel();
     void setKeyValueChannel(char key);
     void setKeyPressedFlag();
-    int KeyToInt(char key);
+    int keyToInt(char key);
     
     void main() override{
-        char key;
         hwlib::cout<< "Started";
         oled.printGameleader();
         oled.printCmd(0);
         oled.flush();
-        
         for (;;){
-            wait(KeyPressedFlag);
+            wait(keyPressedFlag);
             if( getKeyValueChannel() =='C' ){
                 Command = 0;
                 for(;;){
                     oled.printCmd(Command);
                     oled.flush();
-                    wait(KeyPressedFlag);
+                    wait(keyPressedFlag);
                     key = getKeyValueChannel();
                     if( key == '#' && Command >= 0 && Command <= 15){
                         for(;;){
@@ -51,7 +50,7 @@ public:
                                 oled.printCmd(Command);
                                 oled.flush();
                                 for(;;){
-                                    wait(KeyPressedFlag);
+                                    wait(keyPressedFlag);
                                     key = getKeyValueChannel();
                                     if( key == '*'){
                                         oled.printCmd(0);
@@ -62,7 +61,7 @@ public:
                                         oled.printSend(0);
                                         oled.flush();
                                         for(;;){
-                                            wait(KeyPressedFlag);
+                                            wait(keyPressedFlag);
                                             key = getKeyValueChannel();
                                             if(key == '*'){
                                                 oled.printCmd(0);
@@ -90,7 +89,7 @@ public:
                         }
                     }
                     else if (key >= '0' && key <= '9'){
-                        key_int = KeyToInt(key);
+                        key_int = keyToInt(key);
                         Command = Command * 10 + key_int;
                     }
                 }

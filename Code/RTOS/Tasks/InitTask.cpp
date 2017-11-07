@@ -4,25 +4,25 @@ Init_Game_Controller::Init_Game_Controller( IR_Send_Controller & ir_send, OLED_C
         task(3, "InitTask"),
         ir_send(ir_send),
         oled(oled),
-        KeyValueChannel(this, "KeyValueChannel"),
-        KeyPressedFlag(this, "KeyPressedFlag")
+        keyValueChannel(this, "KeyValueChannel"),
+        keyPressedFlag(this, "KeyPressedFlag")
 {}
 
 
 char Init_Game_Controller::getKeyValueChannel(){
-    char c = KeyValueChannel.read();
+    char c = keyValueChannel.read();
     return c;
 }
 
 void Init_Game_Controller::setKeyValueChannel(char key){
-    KeyValueChannel.write(key);
+    keyValueChannel.write(key);
 }
 
 void Init_Game_Controller::setKeyPressedFlag(){
-    KeyPressedFlag.set();
+    keyPressedFlag.set();
 }
 
-int Init_Game_Controller::KeyToInt(char key){
+int Init_Game_Controller::keyToInt(char key){
     return (key - '0');
 }
 
