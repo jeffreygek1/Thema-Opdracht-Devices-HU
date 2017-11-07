@@ -42,8 +42,8 @@ public:
     int timePassed(int timeStamp);
     
     bool arrayIsEmpty(int arg);
-    int charArrayToInt(char arr[4], int len);
-    void clearArray(char arr[4], int len);
+    int charArrayToInt(char arr[3], int len);
+    void clearArray(char arr[3], int len);
     
     void main() override{
         int remainTime;
@@ -61,6 +61,8 @@ public:
                     wait(KeyPressedFlag);
                         key = getKeyValueChannel();
                         if (key == 'A'){
+                            oled.printIndicator('A');
+                            oled.flush();
                             while(true){
                                 wait(KeyPressedFlag);
                                     key = getKeyValueChannel();
@@ -69,6 +71,13 @@ public:
                                         key = getKeyValueChannel();
                                             if (key >= '0' && key <= '9' && charArrayToInt(playerNumber, playerNumberSize) < 32 ){
                                                 playerNumber[playerNumberSize++] = key;
+                                                if(playerNumberSize > 1){
+                                                    oled.printIndicator(playerNumber[0], playerNumber[1]);
+                                                    oled.flush();
+                                                }else{
+                                                    oled.printIndicator(playerNumber[0]);
+                                                    oled.flush();
+                                                }
                                             }else{
                                                 clearArray(playerNumber, playerNumberSize);
                                                 playerNumberSize = 0;
@@ -82,6 +91,13 @@ public:
                                         key = getKeyValueChannel();
                                             if (key >= '0' && key <= '9' && charArrayToInt(firePower, firePowerSize) < 32 ){
                                                 firePower[firePowerSize++] = key;
+                                                if(playerNumberSize > 1){
+                                                    oled.printIndicator(firePower[0], firePower[1]);
+                                                    oled.flush();
+                                                }else{
+                                                    oled.printIndicator(firePower[0]);
+                                                    oled.flush();
+                                                }
                                             }else{
                                                 clearArray(firePower, firePowerSize);
                                                 firePowerSize = 0;

@@ -49,3 +49,9 @@ void OLED_Controller::printGameOver(){
 void OLED_Controller::printCommand(int value){
     cout << "\f" << value << "\n";
 }
+
+void OLED_Controller::printIndicator(char value, char value2 ){
+    cout2 << "\f" 
+        << "Input:" << "\n"
+        << value << value2 << "\n" ;
+}

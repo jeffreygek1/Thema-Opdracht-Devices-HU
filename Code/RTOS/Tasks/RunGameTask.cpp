@@ -61,7 +61,7 @@ bool Run_Game_Controller::arrayIsEmpty(int arg){
     return (arg == 0);
 }
 
-int Run_Game_Controller::charArrayToInt(char arr[4], int len){
+int Run_Game_Controller::charArrayToInt(char arr[3], int len){
     int result = 0;
     for(int i=0; i<len; i++){
         result = result * 10 + ( arr[i] - '0' );
@@ -69,7 +69,7 @@ int Run_Game_Controller::charArrayToInt(char arr[4], int len){
     return result;
 }
 
-void Run_Game_Controller::clearArray(char arr[4], int len){
+void Run_Game_Controller::clearArray(char arr[3], int len){
     for(int i=0; i<len; i++){
         arr[i] = '0';
     }

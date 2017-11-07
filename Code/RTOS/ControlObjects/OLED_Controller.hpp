@@ -28,6 +28,7 @@ public:
     void printHP_DU( int hp, int du );
     void printGameOver();
     void printCommand( int value );
+    void printIndicator(char value, char value2 = ' ');
 
 };
 
