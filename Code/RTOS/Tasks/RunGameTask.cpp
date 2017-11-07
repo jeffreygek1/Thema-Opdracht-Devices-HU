@@ -75,4 +75,10 @@ void Run_Game_Controller::clearArray(char arr[3], int len){
     }
 }
 
+void Run_Game_Controller::countDown(int dur){
+    while (dur > 0){
+        oled.printCommand(dur--);
+        oled.flush();
+    }
+}
 

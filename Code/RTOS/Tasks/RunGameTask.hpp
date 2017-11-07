@@ -17,7 +17,7 @@ private:
     OLED_Controller & oled;
     Register_entity & reg;
     HP_entity & hp;
-    int state = 1;
+    int state = 0;
     int playerNumberSize = 0;
     int firePowerSize = 0;
     rtos::channel< char, 10 > KeyValueChannel;
@@ -28,7 +28,7 @@ private:
 public: 
     Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Controller & ir_send, OLED_Controller & oled, Register_entity & reg, HP_entity & hp);
     
-    // void countDown(int dur);
+    void countDown(int dur);
     char getKeyValueChannel();
     void setKeyValueChannel(char key);
     void setKeyPressedFlag();
@@ -115,6 +115,7 @@ public:
                                 }
                                 oled.clear();
                                 state = 1;
+                                countDown(5);
                                 i = 0;
                                 
                             }
@@ -134,6 +135,8 @@ public:
                         oled.clear();
                         oled.printGameOver();
                         oled.flush();
+                        beeper.setSoundPool(2);
+                        beeper.setSoundFlag();
                         while(1==1){}
                     }else{
                         const rtos::event & evt_rungame = wait();
@@ -141,6 +144,8 @@ public:
                             pn = getMessageChannelPN();
                             data = getMessageChannelData();
                             hp.setHP( hp.getHP() - data );
+                            beeper.setSoundPool(3);
+                            beeper.setSoundFlag();
                             oled.printHP_DU(hp.getHP(), remainTime);
                             oled.flush();
                         }else if (evt_rungame == KeyPressedFlag){
