@@ -18,13 +18,13 @@
       <Project Name="EntityObjects" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="GAMELEADER" Path="GAMELEADER/_codelite.project" Active="No"/>
+  <Project Name="GAMELEADER" Path="GAMELEADER/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="GAMELEADER" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="PLAYER" Path="PLAYER/_codelite.project" Active="Yes"/>
+  <Project Name="PLAYER" Path="PLAYER/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="PLAYER" ConfigName="Release"/>

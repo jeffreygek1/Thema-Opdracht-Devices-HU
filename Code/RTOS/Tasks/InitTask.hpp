@@ -11,8 +11,7 @@ class Init_Game_Controller: public rtos::task<>{
 private:
     IR_Send_Controller & ir_send;
     OLED_Controller & oled;
-    int state = 0;
-    int Command, key_int;
+    int command, key_int;
     char key;
     rtos::channel< char, 10 > keyValueChannel;
     rtos::flag keyPressedFlag;
@@ -32,22 +31,22 @@ public:
         for (;;){
             wait(keyPressedFlag);
             if( getKeyValueChannel() =='C' ){
-                Command = 0;
+                command = 0;
                 for(;;){
-                    oled.printCmd(Command);
+                    oled.printCmd(command);
                     oled.flush();
                     wait(keyPressedFlag);
                     key = getKeyValueChannel();
-                    if( key == '#' && Command >= 0 && Command <= 15){
+                    if( key == '#' && command >= 0 && command <= 15){
                         for(;;){
                             if(key == '#'){
                                 ir_send.setSendFlag();
-                                ir_send.setSendChannel(Command);
+                                ir_send.setSendChannel(command);
                                 hwlib::wait_ms(100);
-                                oled.printSend(Command);
+                                oled.printSend(command);
                                 oled.flush();
                                 hwlib::wait_ms(2000);
-                                oled.printCmd(Command);
+                                oled.printCmd(command);
                                 oled.flush();
                                 for(;;){
                                     wait(keyPressedFlag);
@@ -76,12 +75,12 @@ public:
                                     }
                                     else if (key == '#'){
                                         ir_send.setSendFlag();
-                                        ir_send.setSendChannel(Command);
+                                        ir_send.setSendChannel(command);
                                         hwlib::wait_ms(100);
-                                        oled.printSend(Command);
+                                        oled.printSend(command);
                                         oled.flush();
                                         hwlib::wait_ms(2000);
-                                        oled.printCmd(Command);
+                                        oled.printCmd(command);
                                         oled.flush();
                                     }
                                 }
@@ -90,7 +89,7 @@ public:
                     }
                     else if (key >= '0' && key <= '9'){
                         key_int = keyToInt(key);
-                        Command = Command * 10 + key_int;
+                        command = command * 10 + key_int;
                     }
                 }
             }
