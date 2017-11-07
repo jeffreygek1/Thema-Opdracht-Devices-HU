@@ -4,13 +4,11 @@ OLED_Controller::OLED_Controller(
     hwlib::glcd_oled_buffered & oled, 
     hwlib::window_ostream & cout, 
     hwlib::window_ostream & cout2, 
-//    hwlib::window_ostream & cout3, 
     hwlib::window_ostream & cout4
 ):
     oled(oled),
     cout(cout),
     cout2(cout2),
-//    cout3(cout3),
     cout4(cout4)
 {
     oled.clear();
@@ -34,14 +32,10 @@ void OLED_Controller::printPlayerNumber(int value){
         << "=ID:" << value << "==" << "\n";
 }
 
-void OLED_Controller::printHP(int hp, int du){
+void OLED_Controller::printHP_DU(int hp, int du){
     cout2 << "\f" 
         << "HP:" << hp << "\n"
         << "T :" << du << "s" << "\n" ;
-}
-
-void OLED_Controller::printTime(int value){
-//    cout3 << "\f" << "T:" << value << "s" << "\n";
 }
 
 void OLED_Controller::printGameOver(){
@@ -52,7 +46,51 @@ void OLED_Controller::printGameOver(){
      flush(); 
 }
 
-void OLED_Controller::printCommand(int value){
-    cout << "\f" << value << "\n";
+void OLED_Controller::printstartInit(){
+    cout4 << "\f" 
+        << "Press\n"
+        << "A to\n"
+        << "Start\n";
 }
 
+void OLED_Controller::printPlayerNumberSetup(){
+    cout 
+        << "\f" 
+        << "PN" << "\n"; 
+}
+
+void OLED_Controller::printFirePowerSetup(){
+    cout 
+        << "\f" 
+        << "FP" << "\n"; 
+}
+
+void OLED_Controller::printWaitingForCommand(){
+    cout4 << "\f" 
+        << "Waiting\n"
+        << "For\n"
+        << "Leader\n";
+}
+
+void OLED_Controller::printCommand(int value){
+    cout 
+        << "\f" << value << "\n";
+}
+
+void OLED_Controller::printCmd(int value){
+    cout << "\f" << "Cmd:" << value << "\n";
+}
+
+void OLED_Controller::printSend(int value){
+    cout << "\f" << value <<" Send!"<< "\n";
+}
+
+void OLED_Controller::printGameleader(){
+    cout2 << "\f" << "Gameleader"<< "\n"
+    << " ________ " << "\n";
+}
+void OLED_Controller::printIndicator(char value, char value2 ){
+    cout2 << "\f" 
+        << "Input:" << "\n"
+        << value << value2 << "\n" ;
+}

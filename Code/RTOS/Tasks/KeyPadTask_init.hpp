@@ -1,31 +1,54 @@
-#ifndef KEYPADTASK_INIT_HPP
-#define KEYPADTASK_INIT_HPP
+#ifndef KEYPAD_INIT_CONTROLLER_HPP
+#define KEYPAD_INIT_CONTROLLER_HPP
 
-#include "InitTask.hpp"
-#include "bmptk.h"
-#include "hwlib.hpp"
 #include "rtos.hpp"
+#include "Keypad.hpp"
+#include "InitTask.hpp"
 
-class KeyPad_Init_Controller: public rtos::task<>
-{
+class keyPad_Controller2 : public rtos::task<> {
 private:
-    hwlib::target::pin_in & sw_test;
-    Init_Game_Controller & run_game;
-    rtos::timer KeyInputDelayTimer;
-public:
-    KeyPad_Init_Controller( hwlib::target::pin_in & sw_test, Init_Game_Controller & run_game );
-    void main() {
+    Keypad & keypad2;
+    Init_Game_Controller & init_game;
+    rtos::timer KeyInputDelayTimer2;
+    char c;
+    
+    
+public: 
+    keyPad_Controller2(Keypad & keypad2, Init_Game_Controller & init_game);
+    
+    void main() override{
         for(;;){
-            KeyInputDelayTimer.set(50'000);
-            if (!sw_test.get() ){
-                run_game.setKeyValueChannel('*');
-                run_game.setKeyPressedFlag();
+            KeyInputDelayTimer2.set(50'000);
+            c = keypad2.get();
+            switch(c){
+                case 'A':
+                    init_game.setKeyValueChannel('A');
+                    init_game.setKeyPressedFlag();
+                    break;
+                case 'B':
+                    init_game.setKeyValueChannel('B');
+                    init_game.setKeyPressedFlag();
+                    break;
+                case 'C':
+                    init_game.setKeyValueChannel('C');
+                    init_game.setKeyPressedFlag();
+                    break;
+                case '*':
+                    init_game.setKeyValueChannel('*');
+                    init_game.setKeyPressedFlag();
+                    break;
+                case '#':
+                    init_game.setKeyValueChannel('#');
+                    init_game.setKeyPressedFlag();
+                    break;
+                default:
+                    init_game.setKeyValueChannel(c);
+                    init_game.setKeyPressedFlag();
+                    break;
             }
-            wait(KeyInputDelayTimer);
-            
+            wait(KeyInputDelayTimer2);
         }
-        
     }
 };
 
-#endif // KEYPADTASK_INIT_HPP
+#endif // KEYPAD_INIT_CONTROLLER_HPP

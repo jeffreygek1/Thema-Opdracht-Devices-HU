@@ -1,7 +1,7 @@
 #include "HP_entity.hpp"
 
-HP_entity::HP_entity(int hitpoints):
-    Hitpoints(hitpoints)
+HP_entity::HP_entity(int Hitpoints):
+    Hitpoints(Hitpoints)
 {}
 
 int HP_entity::getHP(){

@@ -7,7 +7,6 @@ Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Co
         oled(oled),
         reg(reg),
         hp(hp),
-//        GameStarted(this, "GameStarted")
         KeyValueChannel(this, "KeyValueChannel"),
         MessageChannelPN(this, "MessageChannelPN"),
         MessageChannelData(this, "MessageChannelData"),
@@ -15,9 +14,7 @@ Run_Game_Controller::Run_Game_Controller( Beeper_Controller & beeper, IR_Send_Co
         ReceiveFlag(this, "ReceiverFlag")
 {}
 
-//void Run_Game_Controller::setGameStarted(){
-////    GameStarted.set();
-//}
+
 
 char Run_Game_Controller::getKeyValueChannel(){
     char c = KeyValueChannel.read();
@@ -58,4 +55,22 @@ int Run_Game_Controller::timePassed(int timeStamp){
     
     int remain_time = (reg.getDU() - (hwlib::now_us() - timeStamp) / 1'000'000);
     return remain_time;
+}
+
+bool Run_Game_Controller::arrayIsEmpty(int arg){
+    return (arg == 0);
+}
+
+int Run_Game_Controller::charArrayToInt(char arr[3], int len){
+    int result = 0;
+    for(int i=0; i<len; i++){
+        result = result * 10 + ( arr[i] - '0' );
+    }
+    return result;
+}
+
+void Run_Game_Controller::clearArray(char arr[3], int len){
+    for(int i=0; i<len; i++){
+        arr[i] = '0';
+    }
 }

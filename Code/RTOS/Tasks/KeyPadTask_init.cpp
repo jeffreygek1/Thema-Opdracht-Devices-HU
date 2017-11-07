@@ -1,12 +1,9 @@
 #include "KeyPadTask_init.hpp"
 
-KeyPad_Init_Controller::KeyPad_Init_Controller( hwlib::target::pin_in & sw_test, Init_Game_Controller & run_game ):
-    task(4, "KeyPadTask_init"),
-    sw_test(sw_test),
-    run_game(run_game),
-    KeyInputDelayTimer(this, "KeyInputDelayTimer2")
-    {}
-
-
-
+keyPad_Controller2::keyPad_Controller2(Keypad & keypad2, Init_Game_Controller & init_game):
+        task(4, "KeyPadTask_init"),
+        keypad2(keypad2),
+        init_game(init_game),
+        KeyInputDelayTimer2(this, "KeyInputDelayTimer2")
+{}
 

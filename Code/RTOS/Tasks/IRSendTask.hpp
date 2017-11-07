@@ -16,6 +16,7 @@ private:
     rtos::flag SendFlag;
     int Message;
     int checksum;
+    int send;
 public:
     IR_Send_Controller(IR_LED & ir_led, Register_entity & reg);
     void send_signal(int signal);
@@ -25,16 +26,16 @@ public:
     int getSendChannel();
     void setSendFlag();
     
-    
     void main() override{
-         int signal;
+        int signal;
         for(;;){
-                wait(SendFlag);
-                    signal = encode_signal(getSendChannel());
-                    send_signal(signal);
-                    send_signal(signal);
+            wait(SendFlag);
+            signal = encode_signal(getSendChannel());
+            //hwlib::cout << signal;
+            for(send = 0; send < 2; send++){
+                send_signal(signal);
             }
-        
+        }
     }
 };
 

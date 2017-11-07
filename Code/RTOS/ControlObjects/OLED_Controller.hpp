@@ -11,14 +11,12 @@ private:
     hwlib::glcd_oled_buffered & oled;
     hwlib::window_ostream & cout;
     hwlib::window_ostream & cout2;
-//    hwlib::window_ostream & cout3;
     hwlib::window_ostream & cout4;
 public:
     OLED_Controller( 
         hwlib::glcd_oled_buffered & oled, 
         hwlib::window_ostream & cout, 
         hwlib::window_ostream & cout2, 
-//        hwlib::window_ostream & cout3, 
         hwlib::window_ostream & cout4
     );
 
@@ -27,11 +25,17 @@ public:
     void draw(const hwlib::location & pos);
     
     void printPlayerNumber(int value);
-    void printHP( int hp, int du );
-    void printTime ( int value );
-    void updateDisplay();
+    void printHP_DU( int hp, int du );
     void printGameOver();
-    void printCommand( int value);
+    void printstartInit();
+    void printPlayerNumberSetup();
+    void printFirePowerSetup();
+    void printWaitingForCommand();
+    void printCommand( int value );
+    void printCmd( int value );
+    void printSend(int value);
+    void printGameleader();
+    void printIndicator(char value, char value2 = ' ');
 
 };
 

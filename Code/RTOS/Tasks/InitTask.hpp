@@ -1,5 +1,5 @@
-#ifndef INITTASK_HPP
-#define INITTASK_HPP
+#ifndef INIT_GAME_CONTROLLER_HPP
+#define INIT_GAME_CONTROLLER_HPP
 
 #include "bmptk.h"
 #include "hwlib.hpp"
@@ -12,14 +12,12 @@ private:
     IR_Send_Controller & ir_send;
     OLED_Controller & oled;
     int state = 0;
-    int command, key_int;
-//    rtos::flag GameStartedFlag;
+    int Command, key_int;
     rtos::channel< char, 10 > KeyValueChannel;
     rtos::flag KeyPressedFlag;
 public: 
     Init_Game_Controller( IR_Send_Controller & ir_send, OLED_Controller & oled);
     
-    //void setGameStartedFlag();
     char getKeyValueChannel();
     void setKeyValueChannel(char key);
     void setKeyPressedFlag();
@@ -27,42 +25,65 @@ public:
     
     void main() override{
         char key;
+        hwlib::cout<< "Started";
+        oled.printGameleader();
+        oled.printCmd(0);
+        oled.flush();
+        
         for (;;){
             wait(KeyPressedFlag);
-            if( getKeyValueChannel() == 'c' ){
-                command = 0;
+            if( getKeyValueChannel() =='C' ){
+                Command = 0;
                 for(;;){
-                    oled.printCommand(command);
+                    oled.printCmd(Command);
                     oled.flush();
                     wait(KeyPressedFlag);
                     key = getKeyValueChannel();
-                    if( key == '#' && command >= 0 && command <= 15){
+                    if( key == '#' && Command >= 0 && Command <= 15){
                         for(;;){
-                            wait(KeyPressedFlag);
-                            key = getKeyValueChannel();
                             if(key == '#'){
                                 ir_send.setSendFlag();
-                                ir_send.setSendChannel(command);
+                                ir_send.setSendChannel(Command);
+                                hwlib::wait_ms(100);
+                                oled.printSend(Command);
+                                oled.flush();
+                                hwlib::wait_ms(2000);
+                                oled.printCmd(Command);
+                                oled.flush();
                                 for(;;){
-                                    //ir_send.setSendFlag();
-                                    //ir_send.setSendChannel(command);
                                     wait(KeyPressedFlag);
                                     key = getKeyValueChannel();
                                     if( key == '*'){
-                                        oled.printCommand(0);
+                                        oled.printCmd(0);
+                                        oled.flush();
+                                        ir_send.setSendFlag();
+                                        ir_send.setSendChannel(0);
+                                        hwlib::wait_ms(2000);
+                                        oled.printSend(0);
                                         oled.flush();
                                         for(;;){
                                             wait(KeyPressedFlag);
                                             key = getKeyValueChannel();
                                             if(key == '*'){
-                                                oled.printCommand(0);
+                                                oled.printCmd(0);
+                                                oled.flush();
+                                                ir_send.setSendFlag();
+                                                ir_send.setSendChannel(0);
+                                                hwlib::wait_ms(2000);
+                                                oled.printSend(0);
                                                 oled.flush();
                                             }
                                         }
                                     }
                                     else if (key == '#'){
                                         ir_send.setSendFlag();
-                                        ir_send.setSendChannel(command);
+                                        ir_send.setSendChannel(Command);
+                                        hwlib::wait_ms(100);
+                                        oled.printSend(Command);
+                                        oled.flush();
+                                        hwlib::wait_ms(2000);
+                                        oled.printCmd(Command);
+                                        oled.flush();
                                     }
                                 }
                             }
@@ -70,7 +91,7 @@ public:
                     }
                     else if (key >= '0' && key <= '9'){
                         key_int = KeyToInt(key);
-                        command = command * 10 + key_int;
+                        Command = Command * 10 + key_int;
                     }
                 }
             }
@@ -78,5 +99,4 @@ public:
     }
 };
 
-
-#endif // INITTASK_HPP
+#endif // INIT_GAME_CONTROLLER_HPP

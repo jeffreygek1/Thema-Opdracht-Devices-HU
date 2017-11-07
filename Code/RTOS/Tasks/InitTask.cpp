@@ -4,14 +4,10 @@ Init_Game_Controller::Init_Game_Controller( IR_Send_Controller & ir_send, OLED_C
         task(3, "InitTask"),
         ir_send(ir_send),
         oled(oled),
-//        GameStarted(this, "GameStarted")
         KeyValueChannel(this, "KeyValueChannel"),
         KeyPressedFlag(this, "KeyPressedFlag")
 {}
 
-//void Run_Game_Controller::setGameStarted(){
-////    GameStarted.set();
-//}
 
 char Init_Game_Controller::getKeyValueChannel(){
     char c = KeyValueChannel.read();
@@ -29,3 +25,6 @@ void Init_Game_Controller::setKeyPressedFlag(){
 int Init_Game_Controller::KeyToInt(char key){
     return (key - '0');
 }
+
+
+

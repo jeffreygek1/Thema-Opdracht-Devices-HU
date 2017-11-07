@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Tasks" InternalType="Console">
+<CodeLite_Project Name="Tasks" InternalType="Console" Version="10.0.0">
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00010001N0005Debug000000000000]]>
@@ -23,18 +23,18 @@
     <File Name="main.cpp"/>
     <File Name="BeeperTask.cpp"/>
     <File Name="BeeperTask.hpp"/>
-    <File Name="InitTask.cpp"/>
-    <File Name="InitTask.hpp"/>
     <File Name="IRReceiveTask.cpp"/>
     <File Name="IRReceiveTask.hpp"/>
     <File Name="IRSendTask.cpp"/>
     <File Name="IRSendTask.hpp"/>
     <File Name="KeyPadTask.cpp"/>
     <File Name="KeyPadTask.hpp"/>
-    <File Name="KeyPadTask_init.cpp"/>
-    <File Name="KeyPadTask_init.hpp"/>
     <File Name="RunGameTask.cpp"/>
     <File Name="RunGameTask.hpp"/>
+    <File Name="InitTask.hpp"/>
+    <File Name="InitTask.cpp"/>
+    <File Name="KeyPadTask_init.hpp"/>
+    <File Name="KeyPadTask_init.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
