@@ -20,32 +20,8 @@ public:
         for(;;){
             KeyInputDelayTimer.set(50'000);
             c = keypad1.get();
-            switch(c){
-                case 'A':
-                    run_game.setKeyValueChannel('A');
-                    run_game.setKeyPressedFlag();
-                    break;
-                case 'B':
-                    run_game.setKeyValueChannel('B');
-                    run_game.setKeyPressedFlag();
-                    break;
-                case 'C':
-                    run_game.setKeyValueChannel('C');
-                    run_game.setKeyPressedFlag();
-                    break;
-                case '*':
-                    run_game.setKeyValueChannel('*');
-                    run_game.setKeyPressedFlag();
-                    break;
-                case '#':
-                    run_game.setKeyValueChannel('#');
-                    run_game.setKeyPressedFlag();
-                    break;
-                default:
-                    run_game.setKeyValueChannel(c);
-                    run_game.setKeyPressedFlag();
-                    break;
-            }
+            run_game.setKeyValueChannel(c);
+            run_game.setKeyPressedFlag();
             wait(KeyInputDelayTimer);
         }
     }
