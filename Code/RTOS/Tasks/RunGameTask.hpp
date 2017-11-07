@@ -47,7 +47,7 @@ public:
     
     void main() override{
         int remainTime;
-        int timeStamp = hwlib::now_us();
+        int timeStamp;
         char key;
         int pn;
         int data;
@@ -116,6 +116,7 @@ public:
                                 oled.clear();
                                 state = 1;
                                 countDown(5);
+                                timeStamp = hwlib::now_us();
                                 i = 0;
                                 
                             }

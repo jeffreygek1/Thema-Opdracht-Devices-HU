@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="4" Name="m_selectedTab"/>
   <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\PLAYER\main.cpp" Name="FileName"/>
+      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\InitTask.hpp" Name="FileName"/>
+      <int Value="66" Name="FirstVisibleLine"/>
+      <int Value="101" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\InitTask.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\RunGameTask.hpp" Name="FileName"/>
-      <int Value="37" Name="FirstVisibleLine"/>
-      <int Value="53" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\BeeperTask.hpp" Name="FileName"/>
-      <int Value="13" Name="FirstVisibleLine"/>
+      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\IRSendTask.cpp" Name="FileName"/>
+      <int Value="25" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\RunGameTask.cpp" Name="FileName"/>
-      <int Value="54" Name="FirstVisibleLine"/>
-      <int Value="80" Name="CurrentLine"/>
+      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\Tasks\IRSendTask.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="31" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\ControlObjects\OLED_Controller.cpp" Name="FileName"/>
-      <int Value="51" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <wxString Value="C:\ti-software\Thema-Opdracht-Devices-HU\Code\RTOS\GAMELEADER\main.cpp" Name="FileName"/>
+      <int Value="5" Name="FirstVisibleLine"/>
+      <int Value="13" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
