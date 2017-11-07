@@ -96,6 +96,4 @@ int main( void ){
     (void) IRReceiveTask;
     (void) KeyPadTask;
     rtos::run();
-
-   
 }
