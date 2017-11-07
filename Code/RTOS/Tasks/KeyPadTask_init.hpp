@@ -20,6 +20,8 @@ public:
         for(;;){
             KeyInputDelayTimer2.set(50'000);
             c = keypad2.get();
+//            init_game.setKeyValueChannel(c);
+//            init_game.setKeyPressedFlag();
             switch(c){
                 case 'A':
                     init_game.setKeyValueChannel('A');

@@ -17,6 +17,7 @@ private:
     int Message;
     int checksum;
     int send;
+    int signal;
 public:
     IR_Send_Controller(IR_LED & ir_led, Register_entity & reg);
     void send_signal(int signal);
@@ -27,7 +28,6 @@ public:
     void setSendFlag();
     
     void main() override{
-        int signal;
         for(;;){
             wait(SendFlag);
             signal = encode_signal(getSendChannel());

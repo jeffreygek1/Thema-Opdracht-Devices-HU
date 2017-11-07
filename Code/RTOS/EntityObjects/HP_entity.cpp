@@ -8,8 +8,8 @@ int HP_entity::getHP(){
     return Hitpoints;
 }
 
-void HP_entity::setHP( int value ){
-    Hitpoints = value;
+void HP_entity::setHP( int Value ){
+    Hitpoints = Value;
 }
 
 
