@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="example code" Database="" Version="10.0.0">
-  <Project Name="IR_Send_Controller" Path="IR_Send_Controller/_codelite.project" Active="Yes"/>
-  <BuildMatrix>
-    <WorkspaceConfiguration Name="Release" Selected="yes">
-      <Project Name="IR_Send_Controller" ConfigName="Release"/>
-    </WorkspaceConfiguration>
-  </BuildMatrix>
-</CodeLite_Workspace>
