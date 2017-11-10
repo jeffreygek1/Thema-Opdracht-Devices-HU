@@ -1,3 +1,12 @@
+
+/// \file initTask.cpp
+/// The initTask file,
+/// contains the init control object definition
+/// Date file created:
+/// \date 06-11-2017
+/// Date last modified:
+/// \date 08-11-2017
+
 #include "initTask.hpp"
 
 initGameController::initGameController( irSendController & irSend, oledController & oledControl ):

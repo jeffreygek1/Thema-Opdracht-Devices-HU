@@ -20,7 +20,6 @@
  * @author Leon Zhang
  * @author Arsalan Anwari
  * @date 08/11/2017
- * 
  * @brief This control object is used by the game leader to start the game
  * 
  */

@@ -1,3 +1,11 @@
+/// \file runGameTask.cpp
+/// The runGameTask file,
+/// contains the run game controller object definition 
+/// Date file created:
+/// \date 06-11-2017
+/// Date last modified:
+/// \date 08-11-2017
+
 #include "runGameTask.hpp"
 
 runGameController::runGameController(

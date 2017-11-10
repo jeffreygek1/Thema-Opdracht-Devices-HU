@@ -1,3 +1,12 @@
+
+/// \file irReceiveTask.cpp
+/// The irReceiverController file,
+/// contains the ir receiver controller object definition
+/// Date file created:
+/// \date 06-11-2017
+/// Date last modified:
+/// \date 08-11-2017
+
 #include "irReceiveTask.hpp"
 
 irReceiverController::irReceiverController( irReceiver & receiver, runGameController & runGame ):

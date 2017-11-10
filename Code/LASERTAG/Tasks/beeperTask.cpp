@@ -1,3 +1,10 @@
+/// \file beeperTask.cpp
+/// The beeperTask file,
+/// contains the beeper controller object definition
+/// Date file created:
+/// \date 06-11-2017
+/// Date last modified:
+/// \date 08-11-2017
 #include "beeperTask.hpp"
 
 beeperController::beeperController(beeper & beeper1):

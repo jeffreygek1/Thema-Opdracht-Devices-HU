@@ -1,3 +1,12 @@
+
+/// \file irSendTask.cpp
+/// The irSendTask file,
+/// contains the ir send controller object definition
+/// Date file created:
+/// \date 06-11-2017
+/// Date last modified:
+/// \date 08-11-2017
+
 #include "irSendTask.hpp"
 
 irSendController::irSendController(irLed & irLed1, registerEntity & reg):
@@ -31,7 +40,7 @@ void irSendController::sendSignal( int signal )
 }
 
 /**
- * @author Jeffrey van der Waal
+ * @author Jeffrey de Waal
  */
 int irSendController::encodeSignal(int message)
 {

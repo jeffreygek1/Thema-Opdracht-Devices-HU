@@ -15,6 +15,11 @@
  * @author Arsalan Anwari
  * @author Leon Zhang
  * @author Frank Tamer
+<<<<<<< HEAD
+ * @author Jeffrey van der Waal
+ * @author Maarten Wassenaar
+=======
+>>>>>>> 9cc34721f0204cfc1dc44d6bd1459153c6467968
  * @date 08/11/2017
  * 
  * @brief This boundary object sends the message obtained from the irSendTask
